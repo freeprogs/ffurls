@@ -8,6 +8,14 @@ ofile="firefox.txt"
 ipath="$idir/$ifile"
 opath="$odir/$ofile"
 
+if [ -e "$opath" ]; then
+    n=1
+    while [ -e "$opath" ]; do
+        opath="$odir/${ofile}_$n"
+        ((n++))
+    done
+fi
+
 ffurls.py "$ipath" "$opath"
 
 exit 0
