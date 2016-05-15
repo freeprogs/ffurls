@@ -5,6 +5,9 @@ ifile="recovery.js"
 odir="$HOME/Downloads"
 ofile="firefox.txt"
 
-ffurls.py "$idir/$ifile" "$odir/$ofile"
+ipath="$idir/$ifile"
+opath="$odir/$ofile"
+
+ffurls.py "$ipath" "$opath"
 
 exit 0
