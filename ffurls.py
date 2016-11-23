@@ -45,7 +45,11 @@ def main():
     args = get_prog_args()
     ifname = args.ifname
     ofname = args.ofname
-    convert_ff_to_txt(ifname, ofname)
+    oftype = args.t
+    if oftype == 'text':
+        convert_ff_to_txt(ifname, ofname)
+    elif oftype == 'html':
+        convert_ff_to_html(ifname, ofname)
 
 if __name__ == '__main__':
     main()
