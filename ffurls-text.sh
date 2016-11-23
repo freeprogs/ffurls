@@ -16,6 +16,6 @@ if [ -e "$opath" ]; then
     done
 fi
 
-ffurls.py "$ipath" "$opath"
+ffurls.py -t text "$ipath" "$opath"
 
 exit 0
