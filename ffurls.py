@@ -41,7 +41,7 @@ def make_html_page(seq):
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Urls</title>
+  <title>Saved Firefox Urls</title>
   <style type="text/css">
     body {{ font-size: small; }}
   </style>
