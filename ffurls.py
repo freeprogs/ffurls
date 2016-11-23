@@ -29,12 +29,12 @@ def convert_ff_to_txt(ifname, ofname):
 def get_prog_args():
     desc = """
     Converts Firefox session json file to
-    a text file with titles and urls.
+    a text or html file with titles and urls.
     """
     parser = argparse.ArgumentParser(description=desc)
     parser.add_argument('ifname',
                         help='input Firefox session file (sessionstore.js)')
-    parser.add_argument('ofname', help='output urls text file')
+    parser.add_argument('ofname', help='output urls text or html file')
     return parser.parse_args()
 
 def main():
