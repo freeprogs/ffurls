@@ -10,7 +10,7 @@ def get_js_data(fname):
     with open(fname, encoding='utf-8') as fin:
         return json.load(fin)
 
-def get_ff_tu(data):
+def get_ff_title_url_pairs(data):
     for win in data['windows']:
         for tab in win['tabs']:
             for entry in tab['entries']:
@@ -22,7 +22,7 @@ def strings_to_file(fname, seq):
             print(i, file=fout)
 
 def convert_ff_to_txt(ifname, ofname):
-    ffurls = get_ff_tu(get_js_data(ifname))
+    ffurls = get_ff_title_url_pairs(get_js_data(ifname))
     tustrs = ('{}\n{}'.format(t, u) for t, u in ffurls)
     strings_to_file(ofname, tustrs)
 
