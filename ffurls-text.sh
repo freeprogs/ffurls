@@ -3,15 +3,16 @@
 idir="$(ls -d $HOME/.mozilla/firefox/*.default/sessionstore-backups)"
 ifile="recovery.js"
 odir="$HOME/Downloads"
-ofile="firefox.txt"
+ofname="firefox"
+ofext="txt"
 
 ipath="$idir/$ifile"
-opath="$odir/$ofile"
+opath="$odir/$ofname.$ofext"
 
 if [ -e "$opath" ]; then
     n=1
     while [ -e "$opath" ]; do
-        opath="$odir/${ofile}_$n"
+        opath="$odir/${ofname}_$n.$ofext"
         ((n++))
     done
 fi
