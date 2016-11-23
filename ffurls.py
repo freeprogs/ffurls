@@ -21,10 +21,42 @@ def strings_to_file(fname, seq):
         for i in seq:
             print(i, file=fout)
 
+def text_to_file(fname, text):
+    with open(fname, 'w', encoding='utf-8') as fout:
+        fout.write(text)
+
 def convert_ff_to_txt(ifname, ofname):
     ffurls = get_ff_title_url_pairs(get_json_data(ifname))
     tustrs = ('{}\n{}'.format(t, u) for t, u in ffurls)
     strings_to_file(ofname, tustrs)
+
+def convert_ff_to_html(ifname, ofname):
+    ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    html_page = make_html_page(ffurls)
+    text_to_file(ofname, html_page)
+
+def make_html_page(seq):
+    fmt = \
+"""\
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Urls</title>
+  <style type="text/css">
+    body {{ font-size: small; }}
+  </style>
+</head>
+<body>
+  <ul>
+{}
+  </ul>
+</body>
+</html>
+"""
+    ul_items = ('    <li><a href="{1}">{0}</a>'.format(t, u)
+                for t, u in seq)
+    out = fmt.format('\n'.join(ul_items))
+    return out
 
 def get_prog_args():
     desc = """
