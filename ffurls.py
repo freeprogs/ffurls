@@ -32,6 +32,10 @@ def get_prog_args():
     a text or html file with titles and urls.
     """
     parser = argparse.ArgumentParser(description=desc)
+    parser.add_argument('-t',
+                        choices=['text', 'html'],
+                        default='text',
+                        help='type of the output file (default: %(default)s)')
     parser.add_argument('ifname',
                         help='input Firefox session file (sessionstore.js)')
     parser.add_argument('ofname', help='output urls text or html file')
