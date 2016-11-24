@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# Преобразует открытые в Firefox ссылки
-# в названия и ссылки в текстовом файле или html-файле.
+# Преобразует открытые в Firefox ссылки в названия и ссылки в
+# текстовом, html или org файле.
 
 import argparse
 import json
@@ -35,6 +35,11 @@ def convert_ff_to_html(ifname, ofname):
     html_page = make_html_page(ffurls)
     text_to_file(ofname, html_page)
 
+def convert_ff_to_org(ifname, ofname):
+    ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    org_text = make_org_text(ffurls)
+    text_to_file(ofname, org_text)
+
 def make_html_page(seq):
     fmt = \
 """\
@@ -58,19 +63,32 @@ def make_html_page(seq):
     out = fmt.format('\n'.join(ul_items))
     return out
 
+def make_org_text(seq):
+    fmt = \
+"""\
+#+STARTUP: showall
+
+* Saved Firefox urls
+{}
+"""
+    items = ('  [[{1}][{0}]]'.format(t, u)
+             for t, u in seq)
+    out = fmt.format('\n'.join(items))
+    return out
+
 def get_prog_args():
     desc = """
     Converts Firefox session json file to
-    a text or html file with titles and urls.
+    a text, html or emacs org file with titles and urls.
     """
     parser = argparse.ArgumentParser(description=desc)
     parser.add_argument('-t',
-                        choices=['text', 'html'],
+                        choices=['text', 'html', 'org'],
                         default='text',
                         help='type of the output file (default: %(default)s)')
     parser.add_argument('ifname',
                         help='input Firefox session file (sessionstore.js)')
-    parser.add_argument('ofname', help='output urls text or html file')
+    parser.add_argument('ofname', help='output urls text, html or org file')
     return parser.parse_args()
 
 def main():
@@ -82,6 +100,8 @@ def main():
         convert_ff_to_txt(ifname, ofname)
     elif oftype == 'html':
         convert_ff_to_html(ifname, ofname)
+    elif oftype == 'org':
+        convert_ff_to_org(ifname, ofname)
 
 if __name__ == '__main__':
     main()
