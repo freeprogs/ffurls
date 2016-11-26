@@ -88,7 +88,9 @@ def get_prog_args():
     a text, html or emacs org file with titles and urls.
     """
     parser = argparse.ArgumentParser(description=desc)
-    parser.add_argument('--version', '-V', action='version', version='%(prog)s ' + __version__)
+    parser.add_argument('--version', '-V',
+                        action='version',
+                        version='%(prog)s ' + __version__)
     parser.add_argument('-t',
                         choices=['text', 'html', 'org'],
                         default='text',
