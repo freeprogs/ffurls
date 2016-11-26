@@ -5,6 +5,7 @@
 
 
 __version__ = '1.0.1rc2'
+__author__ = 'Slava'
 
 
 import argparse
