@@ -17,6 +17,7 @@ TARGET_SHELL_SCRIPT_ORG = ffurls-org.sh
 TARGET_RENAMED_SHELL_SCRIPT_ORG = ffurlso.sh
 
 TEST_OUTPUT_FILES = file.txt file.html file.org
+TEST_CACHE_DIR = __pycache__
 
 
 # Install section
@@ -35,7 +36,7 @@ help:
 	@echo "usage: make [ clean | install | uninstall ]" 1>&2
 
 clean:
-	@rm -f $(TEST_OUTPUT_FILES) && echo "$(PROG) cleaned"
+	@rm -rf $(TEST_OUTPUT_FILES) $(TEST_CACHE_DIR) && echo "$(PROG) cleaned"
 
 install:
 	install -d $(PYTHON_SCRIPT_DIR)
