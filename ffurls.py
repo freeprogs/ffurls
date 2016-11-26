@@ -4,7 +4,7 @@
 # текстовом, html или org файле.
 
 
-__version__ = '1.0.1rc2'
+__version__ = '1.0.1rc2a'
 __date__ = '26 November 2016'
 __author__ = 'Slava'
 
