@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
 
-"""Сохраняет ссылки, открытые во вкладках Firefox'а.
+"""Saves tabs opened in Firefox to a file in some format.
 
-Преобразует открытые в Firefox ссылки в названия и ссылки для их
-последующего открытия. Некоторые форматы предназначены для лёгкого
-редактирования, тогда как другие, наоборот, фиксируют ссылки.
+It takes Firefox file with actual configuration of opened tabs and
+windows, finds titles and urls there and saves these pairs to a file
+in a selected format.
 
-Поддерживаемые форматы:
+Some file formats are mutable, some not and some are both mutable and
+immutable.
 
-  text -- текстовый файл
-          сырой формат, хорошо подходит для последующей обработки
+Available formats:
 
-  html -- html-страница
-          удобный для просмотра, редактирование не предусмотрено
+  text -- a text file
+          a raw format, it is handy for automatic processing
 
-   org -- org-файл для Emacs
-          удобный для просмотра, подходит для редактирования
-          (рекомендуется)
+  html -- a html page
+          it is handy for read, but it is closed for editions
+
+   org -- org-file for Emacs
+          it is handy for read, also it is handy for editions
+          (recommended)
 
 """
 
