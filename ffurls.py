@@ -23,7 +23,7 @@ Available formats:
 
 """
 
-__version__ = '1.0.1rc3'
+__version__ = '1.0.1rc4'
 __date__ = '26 November 2016'
 __author__ = 'Slava'
 
