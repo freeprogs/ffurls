@@ -6,6 +6,7 @@
 
 __version__ = '1.0.1rc2'
 __author__ = 'Slava'
+__date__ = '26 November 2016'
 
 
 import argparse
