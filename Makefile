@@ -1,4 +1,9 @@
 
+# This file installs ffurls.py and some scripts in the operating
+# system, cleans temporary files and directory in the project.
+#
+# Copyright (C) 2016, Slava <nobody@nowhere>
+
 # Names section
 
 PROG = ffurls
