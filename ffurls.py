@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# __PROGRAM_NAME__ __PROGRAM_VERSION__
+# __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
+
 """Saves tabs opened in Firefox to a file in some format.
 
 It takes Firefox file with actual configuration of opened tabs and
@@ -23,9 +26,9 @@ Available formats:
 
 """
 
-__version__ = '1.0.1'
-__date__ = '26 November 2016'
-__author__ = 'Slava'
+__version__ = '__PROGRAM_VERSION_NO_V__'
+__date__ = '__PROGRAM_DATE__'
+__author__ = '__PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__'
 
 
 import argparse
