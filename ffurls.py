@@ -105,7 +105,7 @@ def make_org_text(seq):
 * Saved Firefox urls
 {}
 """
-    items = ('  [[{1}][{0}]]'.format(t, u)
+    items = ('  - [ ] [[{1}][{0}]]'.format(t, u)
              for t, u in seq)
     out = fmt.format('\n'.join(items))
     return out
