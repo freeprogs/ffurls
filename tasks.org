@@ -44,7 +44,7 @@
      [guest@localhost ~]$
    #+END_EXAMPLE
 
-** TODO Исправить исключение при очищенном кеше браузера
+** DONE Исправить исключение при очищенном кеше браузера
    #+BEGIN_EXAMPLE
      [guest@localhost ffurls]$ ffurls.sh --version
      Traceback (most recent call last):
