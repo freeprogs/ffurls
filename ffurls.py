@@ -31,6 +31,7 @@ __date__ = '__PROGRAM_DATE__'
 __author__ = '__PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__'
 
 
+import sys
 import argparse
 import json
 
@@ -132,18 +133,27 @@ def get_prog_args():
     parser.add_argument('ofname', help='output urls text, html or org file')
     return parser.parse_args()
 
+def print_error(message):
+    """Print an error message to stderr."""
+    print('error:', message, file=sys.stderr)
+
 def main():
     """Convert Firefox tabs to text, html or org file."""
     args = get_prog_args()
     ifname = args.ifname
     ofname = args.ofname
     oftype = args.t
-    if oftype == 'text':
-        convert_ff_to_txt(ifname, ofname)
-    elif oftype == 'html':
-        convert_ff_to_html(ifname, ofname)
-    elif oftype == 'org':
-        convert_ff_to_org(ifname, ofname)
+    try:
+        if oftype == 'text':
+            convert_ff_to_txt(ifname, ofname)
+        elif oftype == 'html':
+            convert_ff_to_html(ifname, ofname)
+        elif oftype == 'org':
+            convert_ff_to_org(ifname, ofname)
+    except FileNotFoundError:
+        print_error('source data file not found: {}'.format(ifname))
+        return 1
+    return 0
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
