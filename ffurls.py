@@ -128,7 +128,7 @@ def get_prog_args():
                         default='text',
                         help='type of the output file (default: %(default)s)')
     parser.add_argument('ifname',
-                        help='input Firefox session file (sessionstore.js)')
+                        help='input Firefox session file (recovery.js)')
     parser.add_argument('ofname', help='output urls text, html or org file')
     return parser.parse_args()
 
