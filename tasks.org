@@ -1,4 +1,4 @@
-#+STARTUP: showall
+#+STARTUP: showall hideblocks
 
 * Разработка
 
@@ -18,6 +18,29 @@
 ** DONE Переделать расширения в скриптах, включив в них точку
 
 ** DONE Добавить информацию о версии, дате и авторе в скрипты
+
+
+* Баги
+
+** TODO Исправить исключение при отсутствии title на странице
+   #+BEGIN_EXAMPLE
+     [guest@localhost ~]$ ffurls.sh
+     Traceback (most recent call last):
+       File "/usr/local/bin/ffurls.py", line 146, in <module>
+         main()
+       File "/usr/local/bin/ffurls.py", line 143, in main
+         convert_ff_to_org(ifname, ofname)
+       File "/usr/local/bin/ffurls.py", line 72, in convert_ff_to_org
+         org_text = make_org_text(ffurls)
+       File "/usr/local/bin/ffurls.py", line 110, in make_org_text
+         out = fmt.format('\n'.join(items))
+       File "/usr/local/bin/ffurls.py", line 108, in <genexpr>
+         items = ('  [[{1}][{0}]]'.format(t, u)
+       File "/usr/local/bin/ffurls.py", line 44, in get_ff_title_url_pairs
+         yield entry['title'], entry['url']
+     KeyError: 'title'
+     [guest@localhost ~]$
+   #+END_EXAMPLE
 
 
 * Окружение проекта
