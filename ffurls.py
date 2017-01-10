@@ -45,7 +45,9 @@ def get_ff_title_url_pairs(data):
     for win in data['windows']:
         for tab in win['tabs']:
             for entry in tab['entries']:
-                yield entry['title'], entry['url']
+                entry_title = entry.get('title')
+                entry_url = entry.get('url')
+                yield entry_title, entry_url
 
 def strings_to_file(fname, seq):
     """Save strings from sequence to the file on file system."""
@@ -58,22 +60,42 @@ def text_to_file(fname, text):
     with open(fname, 'w', encoding='utf-8') as fout:
         fout.write(text)
 
+def replace_nones(seq, r1, r2):
+    """Replace in sequence of pairs none values to replacement values.
+
+    For example:
+
+      [(None, 1), (1, None), (None, None)]
+
+      becomes:
+
+      [(r1, 1), (1, r2), (r1, r2)]
+
+    """
+    for i1, i2 in seq:
+        o1 = i1 if i1 is not None else r1
+        o2 = i2 if i2 is not None else r2
+        yield o1, o2
+
 def convert_ff_to_txt(ifname, ofname):
     """Convert Firefox tabs to the text file with title and urls."""
     ffurls = get_ff_title_url_pairs(get_json_data(ifname))
-    tustrs = ('{}\n{}'.format(t, u) for t, u in ffurls)
+    ffurls_replaced = replace_nones(ffurls, 'Unknown title', 'unknown')
+    tustrs = ('{}\n{}'.format(t, u) for t, u in ffurls_replaced)
     strings_to_file(ofname, tustrs)
 
 def convert_ff_to_html(ifname, ofname):
     """Convert Firefox tabs to the html file with title and urls."""
     ffurls = get_ff_title_url_pairs(get_json_data(ifname))
-    html_page = make_html_page(ffurls)
+    ffurls_replaced = replace_nones(ffurls, 'Unknown title', 'unknown')
+    html_page = make_html_page(ffurls_replaced)
     text_to_file(ofname, html_page)
 
 def convert_ff_to_org(ifname, ofname):
     """Convert Firefox tabs to the org file with title and urls."""
     ffurls = get_ff_title_url_pairs(get_json_data(ifname))
-    org_text = make_org_text(ffurls)
+    ffurls_replaced = replace_nones(ffurls, 'Unknown title', 'unknown')
+    org_text = make_org_text(ffurls_replaced)
     text_to_file(ofname, org_text)
 
 def make_html_page(seq):
