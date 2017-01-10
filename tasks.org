@@ -24,7 +24,7 @@
 
 * Баги
 
-** TODO Исправить исключение при отсутствии title на странице
+** DONE Исправить исключение при отсутствии title на странице
    #+BEGIN_EXAMPLE
      [guest@localhost ~]$ ffurls.sh
      Traceback (most recent call last):
