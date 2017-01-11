@@ -57,7 +57,7 @@ SHELL_SCRIPTS_INSTALL_DIR = $(path_shell_scripts)
 # Commands
 
 help:
-	@echo "usage: make [ build | clean | install | uninstall ]" 1>&2
+	@echo "usage: make [ build | clean | install | uninstall ]"
 
 build:
 	@[ -d $(BUILD_DIR) ] $&& rm -rf $(BUILD_DIR)
