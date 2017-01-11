@@ -61,7 +61,7 @@ help:
 
 build:
 	@[ -d $(BUILD_DIR) ] $&& rm -rf $(BUILD_DIR)
-	mkdir $(BUILD_DIR)
+	@mkdir $(BUILD_DIR)
 
 	@m4 -P $(VER_M4) $(TARGET_PYTHON_SCRIPT) > $(BUILD_DIR)/$(TARGET_PYTHON_SCRIPT)
 	@chmod u+x $(BUILD_DIR)/$(TARGET_PYTHON_SCRIPT)
