@@ -1,7 +1,21 @@
 #!/usr/bin/env python3
 
 # __PROGRAM_NAME__ __PROGRAM_VERSION__
+#
 # __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """Saves tabs opened in Firefox to a file in some format.
 
@@ -29,6 +43,7 @@ Available formats:
 __version__ = '__PROGRAM_VERSION_NO_V__'
 __date__ = '__PROGRAM_DATE__'
 __author__ = '__PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__'
+__license__ = 'GNU GPLv3'
 
 
 import sys
@@ -146,6 +161,11 @@ def get_prog_args():
     parser.add_argument('--version', '-V',
                         action='version',
                         version='%(prog)s ' + 'v' + __version__)
+    parser.add_argument('--license',
+                        action='version',
+                        version= 'License: ' + __license__ +
+                        ', see more details in file LICENSE.',
+                        help='show program\'s license and exit')
     parser.add_argument('-t',
                         choices=['text', 'html', 'org'],
                         default='text',
