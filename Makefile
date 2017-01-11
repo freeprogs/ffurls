@@ -78,7 +78,7 @@ build:
 	@m4 -P $(VER_M4) $(TARGET_SHELL_SCRIPT_ORG) > $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_ORG)
 	@chmod u+x $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_ORG)
 
-	@echo "$(PROG) has built"
+	@echo "$(PROG) has built in the \`$(BUILD_DIR)' directory."
 
 clean:
 	@rm -rf $(TEST_OUTPUT_FILES) $(TEST_CACHE_DIR)
