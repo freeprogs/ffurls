@@ -56,6 +56,8 @@ SHELL_SCRIPTS_INSTALL_DIR = $(path_shell_scripts)
 
 # Commands
 
+all: build
+
 help:
 	@echo "usage: make [ build | clean | install | uninstall ]"
 
@@ -85,7 +87,12 @@ clean:
 	@rm -rf $(BUILD_DIR)
 	@echo "$(PROG) has cleaned."
 
-install: build
+install:
+	@[ -d $(BUILD_DIR) ] || { \
+            echo "error: Build directory not found." 1>&2;\
+            echo "error: Should to run \`make' first." 1>&2;\
+            exit 1;\
+        }
 	install -d $(PYTHON_SCRIPT_INSTALL_DIR)
 	install $(BUILD_DIR)/$(TARGET_PYTHON_SCRIPT) $(PYTHON_SCRIPT_INSTALL_DIR)/$(TARGET_PYTHON_SCRIPT)
 	install -d $(SHELL_SCRIPTS_INSTALL_DIR)
@@ -101,4 +108,4 @@ uninstall:
 	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_HTML)
 	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_ORG)
 
-.PHONY: help build clean install uninstall
+.PHONY: all help build clean install uninstall
