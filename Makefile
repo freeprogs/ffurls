@@ -83,7 +83,7 @@ build:
 clean:
 	@rm -rf $(TEST_OUTPUT_FILES) $(TEST_CACHE_DIR)
 	@rm -rf $(BUILD_DIR)
-	@echo "$(PROG) cleaned"
+	@echo "$(PROG) has cleaned."
 
 install: build
 	install -d $(PYTHON_SCRIPT_INSTALL_DIR)
