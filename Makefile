@@ -47,7 +47,7 @@ VER_M4 = ver.m4
 
 # Install section
 
-home_dir = /home/guest
+home_dir = $(HOME)
 python_script_dir = /usr/local/bin
 shell_scripts_dir = $(home_dir)/.env/scripts
 
