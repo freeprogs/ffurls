@@ -1,5 +1,5 @@
 
-ffurls v1.0.2rc3
+__PROGRAM_NAME__ __PROGRAM_VERSION__
 
 Saves tabs opened in Firefox to a file in some format.
 
@@ -147,7 +147,7 @@ Other files are for building the program.
 
 5. COPYRIGHT
 
-Copyright (C) 2016-2017, Slava <nobody@nowhere>
+__PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
 
 
 6. LICENSING
@@ -191,5 +191,5 @@ program could lost the input file. If so, edit shell scripts or run
 
 10. ACKNOWLEDGMENTS
 
-At the moment I'm sole here Slava <nobody@nowhere> and nobody
+At the moment I'm sole here __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__ and nobody
 contributed yet.
