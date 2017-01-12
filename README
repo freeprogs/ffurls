@@ -43,7 +43,11 @@ README
 
 1. CONFIGURATION
 
-Configuration of this program is automated in Makefile.
+To configure Makefile for building the program run:
+
+  ./configure
+
+Another configuration of this program is automated in Makefile.
 Run `make help' to know available commands.
 
 

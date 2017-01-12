@@ -1,8 +1,10 @@
 
+# This file is a part of __PROGRAM_NAME__ __PROGRAM_VERSION__
+#
 # This file installs ffurls.py and some scripts in the operating
 # system, cleans temporary files and directory in the project.
 #
-# Copyright (C) 2016-2017, Slava <nobody@nowhere>
+# __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,6 +22,8 @@
 # Names section
 
 PROG = ffurls
+
+ME = Makefile
 
 TARGET_PYTHON_SCRIPT = ffurls.py
 
@@ -57,7 +61,7 @@ VER_M4 = ver.m4
 
 # Install section
 
-home_dir = $(HOME)
+home_dir = __USER_HOME__
 python_script_dir = /usr/local/bin
 shell_scripts_dir = $(home_dir)/.env/scripts
 system_docs_dir = /usr/share/doc
@@ -103,6 +107,7 @@ build:
 clean:
 	@rm -rf $(TEST_OUTPUT_FILES) $(TEST_CACHE_DIR)
 	@rm -rf $(BUILD_DIR)
+	@rm -f $(ME)
 	@echo "$(PROG) has cleaned."
 
 install:
