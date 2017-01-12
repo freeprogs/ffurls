@@ -34,6 +34,10 @@ TARGET_RENAMED_SHELL_SCRIPT_HTML = ffurlsh.sh
 TARGET_SHELL_SCRIPT_ORG = ffurls-org.sh
 TARGET_RENAMED_SHELL_SCRIPT_ORG = ffurlso.sh
 
+TARGET_README = README
+
+TARGET_LICENSE = LICENSE
+
 TEST_OUTPUT_FILES = file.txt file.html file.org
 TEST_CACHE_DIR = __pycache__
 
@@ -45,6 +49,9 @@ M4 = m4 -P
 build_dir = build
 BUILD_DIR = $(build_dir)
 
+docs_dir = $(PROG)
+DOCS_DIR = $(docs_dir)
+
 VER_M4 = ver.m4
 
 
@@ -53,9 +60,12 @@ VER_M4 = ver.m4
 home_dir = $(HOME)
 python_script_dir = /usr/local/bin
 shell_scripts_dir = $(home_dir)/.env/scripts
+system_docs_dir = /usr/share/doc
 
 PYTHON_SCRIPT_INSTALL_DIR = $(python_script_dir)
 SHELL_SCRIPTS_INSTALL_DIR = $(shell_scripts_dir)
+
+DOCS_INSTALL_DIR = $(system_docs_dir)/$(DOCS_DIR)
 
 
 # Commands
@@ -84,6 +94,10 @@ build:
 	@$(M4) $(VER_M4) $(TARGET_SHELL_SCRIPT_ORG) > $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_ORG)
 	@chmod u+x $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_ORG)
 
+	@mkdir $(BUILD_DIR)/$(DOCS_DIR)
+	@$(M4) $(VER_M4) $(TARGET_README) > $(BUILD_DIR)/$(DOCS_DIR)/$(TARGET_README)
+	@cp $(TARGET_LICENSE) $(BUILD_DIR)/$(DOCS_DIR)/$(TARGET_LICENSE)
+
 	@echo "$(PROG) has built in the \`$(BUILD_DIR)' directory."
 
 clean:
@@ -105,11 +119,18 @@ install:
 	install $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_HTML) $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_HTML)
 	install $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_ORG) $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_ORG)
 
+	install -d $(DOCS_INSTALL_DIR)
+	install -m 644 $(BUILD_DIR)/$(DOCS_DIR)/$(TARGET_README) $(DOCS_INSTALL_DIR)/$(TARGET_README)
+	install -m 644 $(BUILD_DIR)/$(DOCS_DIR)/$(TARGET_LICENSE) $(DOCS_INSTALL_DIR)/$(TARGET_LICENSE)
+
 uninstall:
 	rm -f $(PYTHON_SCRIPT_INSTALL_DIR)/$(TARGET_PYTHON_SCRIPT)
 	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_SHELL_SCRIPT_GENERAL)
 	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_TEXT)
 	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_HTML)
 	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_ORG)
+	rm -rf $(DOCS_INSTALL_DIR)
+	@echo
+	@echo "$(PROG) has uninstalled."
 
 .PHONY: all help build clean install uninstall
