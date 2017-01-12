@@ -41,7 +41,10 @@ TEST_CACHE_DIR = __pycache__
 # Build section
 
 M4 = m4 -P
-BUILD_DIR = build
+
+build_dir = build
+BUILD_DIR = $(build_dir)
+
 VER_M4 = ver.m4
 
 
