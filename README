@@ -28,6 +28,8 @@ README
 
  1. Configuration
  2. Installation
+   2.1 General installation
+   2.2 Installation to custom directories
  3. Operating
  4. Files
  5. Copyright
@@ -47,7 +49,9 @@ Run `make help' to know available commands.
 
 2. INSTALLATION
 
-At first you should build program:
+2.1 General installation
+
+At first, you should build program:
 
    `make' or `make build'
 
@@ -57,9 +61,36 @@ When the program is built, you can install:
 
 It can't be installed if it wasn't built.
 
+By default the python script will be installed to /usr/local/bin
+directory.
+By default shell scripts will be installed to $HOME/.env/scripts
+directory.
+
 To uninstall the program run command:
 
   `sudo make uninstall'
+
+
+2.2 Installation to custom directories
+
+You can also replace build and install directories from the command
+line.
+
+Just run to change the build directory:
+
+  `make "build_dir=mydir" build'
+
+Just run to change the home directory:
+
+  `make "home_dir=mydir" install'
+
+Just run to change the python script install directory:
+
+  `make "python_script_dir=mydir" install'
+
+Just run to change the shell scripts install directory:
+
+  `make "shell_scripts_dir=mydir" install'
 
 
 3. OPERATING
