@@ -92,6 +92,17 @@ Just run to change the shell scripts install directory:
 
   `make "shell_scripts_dir=mydir" install'
 
+Just run to change the program docs directory:
+
+  `make "docs_dir=mydir" build'
+
+If you have built custom `docs_dir', then while installation you
+should pass it again.
+
+Just run to change the system docs directory:
+
+  `make "system_docs_dir=mydir" install'
+
 
 3. OPERATING
 
