@@ -164,7 +164,8 @@ def get_prog_args():
     parser.add_argument('--license',
                         action='version',
                         version= 'License: ' + __license__ +
-                        ', see more details in file LICENSE.',
+                        ', see more details in file LICENSE'
+                        ' or at <http://www.gnu.org/licenses/>.',
                         help='show program\'s license and exit')
     parser.add_argument('-t',
                         choices=['text', 'html', 'org'],
