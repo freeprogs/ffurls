@@ -21,6 +21,8 @@
 
 PROG = ffurls
 
+ME = Makefile
+
 TARGET_PYTHON_SCRIPT = ffurls.py
 
 TARGET_SHELL_SCRIPT_GENERAL = ffurls.sh
@@ -103,6 +105,7 @@ build:
 clean:
 	@rm -rf $(TEST_OUTPUT_FILES) $(TEST_CACHE_DIR)
 	@rm -rf $(BUILD_DIR)
+	@rm -f $(ME)
 	@echo "$(PROG) has cleaned."
 
 install:
