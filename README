@@ -1,2 +1,164 @@
 
-Сохраняет открытые ссылки в Firefox'е в файл для их последующего восстановления.
+ffurls v1.0.2rc3
+
+Saves tabs opened in Firefox to a file in some format.
+
+It takes Firefox file with actual configuration of opened tabs and
+windows, finds titles and urls there and saves these pairs to a file
+in a selected format.
+
+Some file formats are mutable, some not and some are both mutable and
+immutable.
+
+Available formats:
+
+  text -- a text file
+          a raw format, it is handy for automatic processing
+
+  html -- a html page
+          it is handy for read, but it is closed for editions
+
+   org -- org-file for Emacs
+          it is handy for read, also it is handy for editions
+          (recommended)
+
+========================================================================
+
+README
+
+ 1. Configuration
+ 2. Installation
+ 3. Operating
+ 4. Files
+ 5. Copyright
+ 6. Licensing
+ 7. Contacts
+ 8. Bugs
+ 9. Troubleshooting
+10. Acknowledgments
+
+========================================================================
+
+1. CONFIGURATION
+
+Configuration of this program is automated in Makefile.
+Run `make help' to know available commands.
+
+
+2. INSTALLATION
+
+At first you should build program:
+
+   `make' or `make build'
+
+When the program is built, you can install:
+
+   `sudo make install'
+
+It can't be installed if it wasn't built.
+
+To uninstall the program run command:
+
+  `sudo make uninstall'
+
+
+3. OPERATING
+
+How to operate with the program you can read in the help of ffurls.py.
+Just run:
+
+  `ffurls.py -h'
+
+Some shell scripts are already operating with the main program. By
+default they are installed in `~/.env/scripts' and have prefix "ffurls"
+in their names.
+
+So, you can run:
+
+  `ffurls.sh'
+
+to save Firefox urls in default format (org-file).
+
+Also you can run:
+
+  `ffurlst.sh' or `ffurlsh.sh' or `ffurlso.sh'
+
+to select output file format - text-file, html-file or org-file.
+
+Usually you will save Firefox urls through `ffurls.sh' since it was
+made special for that. But in some cases you will want simple
+text-file or read-only html-file or forced org-file or even Firefox
+will change the path to its files after update (as it happens
+sometimes), so you will need to use the main program to set new
+Firefox data path. If this will happen, make your own shell script,
+using existing scripts.
+
+
+4. FILES
+
+README          --  This file.
+LICENSE         --  The text of license.
+
+ffurls.py       --  The main program which parses Firefox file and saves output.
+ffurls.sh       --  The shell script for run defualt shell script (ffurls-org.sh).
+
+These shell scripts will be renamed after installation for convenience:
+
+ffurls-text.sh  --  The shell script for run ffurls.py and save to text output.
+                    will be renamed to ffurlst.sh
+ffurls-html.sh  --  The shell script for run ffurls.py and save to html output.
+                    will be renamed to ffurlsh.sh
+ffurls-org.sh   --  The shell script for run ffurls.py and save to org output.
+                    will be renamed to ffurlso.sh
+
+Other files are for building the program.
+
+
+5. COPYRIGHT
+
+Copyright (C) 2016-2017, Slava <nobody@nowhere>
+
+
+6. LICENSING
+
+You can read license in a special file LICENSE in the distribution.
+
+GNU GPLv3
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+7. CONTACTS
+
+Contact is unavailable at the moment. There is no stable contact
+address created yet.
+
+
+8. BUGS
+
+Contact for bugs is unavailable at the moment. There is no stable
+contact address created yet.
+
+
+9. TROUBLESHOOTING
+
+Firefox can change its format (I caught such a case one time), so the
+program could lost the input file. If so, edit shell scripts or run
+`ffurls.py' manually with the new input file.
+
+
+10. ACKNOWLEDGMENTS
+
+At the moment I'm sole here Slava <nobody@nowhere> and nobody
+contributed yet.
