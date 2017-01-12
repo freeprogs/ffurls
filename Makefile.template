@@ -1,8 +1,10 @@
 
+# This file is a part of __PROGRAM_NAME__ __PROGRAM_VERSION__
+#
 # This file installs ffurls.py and some scripts in the operating
 # system, cleans temporary files and directory in the project.
 #
-# Copyright (C) 2016-2017, Slava <nobody@nowhere>
+# __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
