@@ -2,7 +2,7 @@
 # This file installs ffurls.py and some scripts in the operating
 # system, cleans temporary files and directory in the project.
 #
-# Copyright (C) 2017, Slava <nobody@nowhere>
+# Copyright (C) 2016-2017, Slava <nobody@nowhere>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
