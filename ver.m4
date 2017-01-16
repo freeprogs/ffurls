@@ -2,7 +2,7 @@ m4_changecom()m4_dnl
 m4_define(__PROGRAM_NAME__, ffurls)m4_dnl
 m4_define(__PROGRAM_AUTHOR__, Slava)m4_dnl
 m4_define(__PROGRAM_AUTHOR_EMAIL__, <nobody@nowhere>)m4_dnl
-m4_define(__PROGRAM_DAY__, 11)m4_dnl
+m4_define(__PROGRAM_DAY__, 16)m4_dnl
 m4_define(__PROGRAM_MONTH__, Jan)m4_dnl
 m4_define(__PROGRAM_YEAR__, 2017)m4_dnl
 m4_define(__PROGRAM_FIRST_YEAR__, 2016)m4_dnl
