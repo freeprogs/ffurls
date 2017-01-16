@@ -30,6 +30,7 @@ README
  2. Installation
    2.1 General installation
    2.2 Installation to custom directories
+   2.3 How to uninstall the program
  3. Operating
  4. Files
  5. Copyright
@@ -55,69 +56,77 @@ Run `make help' to know available commands.
 
 2.1 General installation
 
-At first, you should build program:
+At first, you should build program, run:
 
    `make' or `make build'
 
-When the program is built, you can install:
+When the program is built, you can install it, run:
 
    `sudo make install'
 
-It can't be installed if it wasn't built.
-
-By default the python script will be installed to /usr/local/bin
+By default the python script will be installed to the `/usr/local/bin'
 directory.
-By default shell scripts will be installed to $HOME/.env/scripts
+By default shell scripts will be installed to the `$HOME/.env/scripts'
 directory.
-
-To uninstall the program run command:
-
-  `sudo make uninstall'
-
 
 2.2 Installation to custom directories
 
 You can also replace build and install directories from the command
 line.
 
-Just run to change the build directory:
+To change a default directory to a custom directory, just run:
 
   `make "build_dir=mydir" build'
 
-Just run to change the home directory:
-
   `make "home_dir=mydir" install'
-
-Just run to change the python script install directory:
 
   `make "python_script_dir=mydir" install'
 
-Just run to change the shell scripts install directory:
-
   `make "shell_scripts_dir=mydir" install'
-
-Just run to change the program docs directory:
 
   `make "docs_dir=mydir" build'
 
-If you have built custom `docs_dir', then while installation you
-should pass it again.
-
-Just run to change the system docs directory:
-
   `make "system_docs_dir=mydir" install'
+
+If you have built a custom directory, then while installation in some
+cases you should pass it again because make doesn't remember it.
+
+2.3 How to uninstall the program
+
+To uninstall the program run command:
+
+  `sudo make uninstall'
+
+If the program was installed to custom directories, you should pass
+these directories through variables to `make'.
 
 
 3. OPERATING
 
-How to operate with the program you can read in the help of ffurls.py.
-Just run:
+Most information how to operate with the program you can read in the
+help of ffurls.py. Just run:
 
   `ffurls.py -h'
 
 Some shell scripts are already operating with the main program. By
-default they are installed in `~/.env/scripts' and have prefix "ffurls"
-in their names.
+default they are installed in `~/.env/scripts' and have prefix
+"ffurls" in their names.
+
+If you don't known what is this and how to use it, I explain it
+here. Directory `.env' is my custom directory for my files of bash
+configuration and my scripts. Another users can't see this directory
+and its contents, but I see and can backup it fast or copy to any
+user. The path to this directory is written into `~/.bash_profile'
+into the variable PATH, so I can run any script in this directory just
+running it by name. That is why shell scripts goes there. I don't mess
+system directories with my scripts. Only ffurls.py goes to the system
+directory because it is a general program for any user in the system.
+
+If you have added this directory and wrote it to the PATH variable,
+you can run shell scripts by names. If you don't want this directory,
+just change the path for shell scripts in the `sudo make install'
+command and they will install to the system (or copy it by yourself to
+a system after install).
 
 So, you can run:
 
@@ -131,33 +140,40 @@ Also you can run:
 
 to select output file format - text-file, html-file or org-file.
 
-Usually you will save Firefox urls through `ffurls.sh' since it was
+Usually, you will save Firefox urls through `ffurls.sh' since it was
 made special for that. But in some cases you will want simple
 text-file or read-only html-file or forced org-file or even Firefox
 will change the path to its files after update (as it happens
-sometimes), so you will need to use the main program to set new
-Firefox data path. If this will happen, make your own shell script,
-using existing scripts.
+sometimes), so you will need to use the main program to set the new
+Firefox data path. If this happens, make your own shell script, using
+existing scripts.
 
 
 4. FILES
 
-README          --  This file.
-LICENSE         --  The text of license.
+README            This file.
 
-ffurls.py       --  The main program which parses Firefox file and saves output.
-ffurls.sh       --  The shell script for run defualt shell script (ffurls-org.sh).
+LICENSE           The text of license.
 
-These shell scripts will be renamed after installation for convenience:
+ffurls.py         The main program which parses Firefox file and saves
+                  output.
 
-ffurls-text.sh  --  The shell script for run ffurls.py and save to text output.
-                    will be renamed to ffurlst.sh
-ffurls-html.sh  --  The shell script for run ffurls.py and save to html output.
-                    will be renamed to ffurlsh.sh
-ffurls-org.sh   --  The shell script for run ffurls.py and save to org output.
-                    will be renamed to ffurlso.sh
+ffurls.sh         The shell script for run defualt shell script
+                  (`ffurls-org.sh').
 
-Other files are for building the program.
+These shell scripts will be renamed after installation for
+convenient using:
+
+ffurls-text.sh    The shell script for run `ffurls.py' and save to text
+                  output. Will be renamed to `ffurlst.sh'.
+
+ffurls-html.sh    The shell script for run `ffurls.py' and save to html
+                  output. Will be renamed to `ffurlsh.sh'.
+
+ffurls-org.sh     The shell script for run `ffurls.py' and save to org
+                  output. Will be renamed to `ffurlso.sh'.
+
+Other files exist for building the program.
 
 
 5. COPYRIGHT
@@ -167,7 +183,8 @@ __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
 
 6. LICENSING
 
-You can read license in a special file LICENSE in the distribution.
+You can read license in file LICENSE in the distribution or program
+documenatation (`/usr/share/doc/ffurls').
 
 GNU GPLv3
 
@@ -200,11 +217,10 @@ contact address created yet.
 9. TROUBLESHOOTING
 
 Firefox can change its format (I caught such a case one time), so the
-program could lost the input file. If so, edit shell scripts or run
+program can lose the input file. If so, edit shell scripts or run
 `ffurls.py' manually with the new input file.
 
 
 10. ACKNOWLEDGMENTS
 
-At the moment I'm sole here __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__ and nobody
-contributed yet.
+At the moment I'm sole here __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
