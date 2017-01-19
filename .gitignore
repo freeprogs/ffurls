@@ -1,4 +1,6 @@
 __pycache__/
+build/
 file.txt
 file.html
 file.org
+Makefile

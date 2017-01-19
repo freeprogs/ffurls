@@ -1,2 +1,227 @@
 
-Сохраняет открытые ссылки в Firefox'е в файл для их последующего восстановления.
+__PROGRAM_NAME__ __PROGRAM_VERSION__
+
+Saves tabs opened in Firefox to a file in some format.
+
+It takes Firefox file with actual configuration of opened tabs and
+windows, finds titles and urls there and saves these pairs to a file
+in a selected format.
+
+Some file formats are mutable, some not and some are both mutable and
+immutable.
+
+Available formats:
+
+  text -- a text file
+          a raw format, it is handy for automatic processing
+
+  html -- a html page
+          it is handy for read, but it is closed for editions
+
+   org -- org-file for Emacs
+          it is handy for read, also it is handy for editions
+          (recommended)
+
+========================================================================
+
+README
+
+ 1. Configuration
+ 2. Installation
+   2.1 General installation
+   2.2 Installation to custom directories
+   2.3 How to uninstall the program
+ 3. Operating
+ 4. Files
+ 5. Copyright
+ 6. Licensing
+ 7. Contacts
+ 8. Bugs
+ 9. Troubleshooting
+10. Acknowledgments
+
+========================================================================
+
+1. CONFIGURATION
+
+To configure Makefile for building the program run:
+
+  ./configure
+
+Another configuration of this program is automated in Makefile.
+Run `make help' to know available commands.
+
+
+2. INSTALLATION
+
+2.1 General installation
+
+At first, you should build program, run:
+
+   `make' or `make build'
+
+When the program is built, you can install it, run:
+
+   `sudo make install'
+
+By default the python script will be installed to the `/usr/local/bin'
+directory.
+By default shell scripts will be installed to the `$HOME/.env/scripts'
+directory.
+
+2.2 Installation to custom directories
+
+You can also replace build and install directories from the command
+line.
+
+To change a default directory to a custom directory, just run:
+
+  `make "build_dir=mydir" build'
+
+  `make "home_dir=mydir" install'
+
+  `make "python_script_dir=mydir" install'
+
+  `make "shell_scripts_dir=mydir" install'
+
+  `make "docs_dir=mydir" build'
+
+  `make "system_docs_dir=mydir" install'
+
+If you have built a custom directory, then while installation in some
+cases you should pass it again because make doesn't remember it.
+
+2.3 How to uninstall the program
+
+To uninstall the program run command:
+
+  `sudo make uninstall'
+
+If the program was installed to custom directories, you should pass
+these directories through variables to `make'.
+
+
+3. OPERATING
+
+Most information how to operate with the program you can read in the
+help of ffurls.py. Just run:
+
+  `ffurls.py -h'
+
+Some shell scripts are already operating with the main program. By
+default they are installed in `~/.env/scripts' and have prefix
+"ffurls" in their names.
+
+If you don't known what is this and how to use it, I explain it
+here. Directory `.env' is my custom directory for my files of bash
+configuration and my scripts. Another users can't see this directory
+and its contents, but I see and can backup it fast or copy to any
+user. The path to this directory is written into `~/.bash_profile'
+into the variable PATH, so I can run any script in this directory just
+running it by name. That is why shell scripts goes there. I don't mess
+system directories with my scripts. Only ffurls.py goes to the system
+directory because it is a general program for any user in the system.
+
+If you have added this directory and wrote it to the PATH variable,
+you can run shell scripts by names. If you don't want this directory,
+just change the path for shell scripts in the `sudo make install'
+command and they will install to the system (or copy it by yourself to
+a system after install).
+
+So, you can run:
+
+  `ffurls.sh'
+
+to save Firefox urls in default format (org-file).
+
+Also you can run:
+
+  `ffurlst.sh' or `ffurlsh.sh' or `ffurlso.sh'
+
+to select output file format - text-file, html-file or org-file.
+
+Usually, you will save Firefox urls through `ffurls.sh' since it was
+made special for that. But in some cases you will want simple
+text-file or read-only html-file or forced org-file or even Firefox
+will change the path to its files after update (as it happens
+sometimes), so you will need to use the main program to set the new
+Firefox data path. If this happens, make your own shell script, using
+existing scripts.
+
+
+4. FILES
+
+README            This file.
+
+LICENSE           The text of license.
+
+ffurls.py         The main program which parses Firefox file and saves
+                  output.
+
+ffurls.sh         The shell script for run defualt shell script
+                  (`ffurls-org.sh').
+
+These shell scripts will be renamed after installation for
+convenient using:
+
+ffurls-text.sh    The shell script for run `ffurls.py' and save to text
+                  output. Will be renamed to `ffurlst.sh'.
+
+ffurls-html.sh    The shell script for run `ffurls.py' and save to html
+                  output. Will be renamed to `ffurlsh.sh'.
+
+ffurls-org.sh     The shell script for run `ffurls.py' and save to org
+                  output. Will be renamed to `ffurlso.sh'.
+
+Other files exist for building the program.
+
+
+5. COPYRIGHT
+
+__PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
+
+
+6. LICENSING
+
+You can read license in file LICENSE in the distribution or program
+documenatation (`/usr/share/doc/ffurls').
+
+GNU GPLv3
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+7. CONTACTS
+
+Contact is unavailable at the moment. There is no stable contact
+address created yet.
+
+
+8. BUGS
+
+Contact for bugs is unavailable at the moment. There is no stable
+contact address created yet.
+
+
+9. TROUBLESHOOTING
+
+Firefox can change its format (I caught such a case one time), so the
+program can lose the input file. If so, edit shell scripts or run
+`ffurls.py' manually with the new input file.
+
+
+10. ACKNOWLEDGMENTS
+
+At the moment I'm sole here __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__.
+

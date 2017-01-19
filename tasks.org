@@ -1,4 +1,4 @@
-#+STARTUP: showall
+#+STARTUP: showall hideblocks
 
 * Разработка
 
@@ -19,9 +19,54 @@
 
 ** DONE Добавить информацию о версии, дате и авторе в скрипты
 
+** DONE Переделать ссылки в org-файле в элементы списка
+
+
+* Баги
+
+** DONE Исправить исключение при отсутствии title на странице
+   #+BEGIN_EXAMPLE
+     [guest@localhost ~]$ ffurls.sh
+     Traceback (most recent call last):
+       File "/usr/local/bin/ffurls.py", line 146, in <module>
+         main()
+       File "/usr/local/bin/ffurls.py", line 143, in main
+         convert_ff_to_org(ifname, ofname)
+       File "/usr/local/bin/ffurls.py", line 72, in convert_ff_to_org
+         org_text = make_org_text(ffurls)
+       File "/usr/local/bin/ffurls.py", line 110, in make_org_text
+         out = fmt.format('\n'.join(items))
+       File "/usr/local/bin/ffurls.py", line 108, in <genexpr>
+         items = ('  [[{1}][{0}]]'.format(t, u)
+       File "/usr/local/bin/ffurls.py", line 44, in get_ff_title_url_pairs
+         yield entry['title'], entry['url']
+     KeyError: 'title'
+     [guest@localhost ~]$
+   #+END_EXAMPLE
+
+** DONE Исправить исключение при очищенном кеше браузера
+   #+BEGIN_EXAMPLE
+     [guest@localhost ffurls]$ ffurls.sh --version
+     Traceback (most recent call last):
+       File "/usr/local/bin/ffurls.py", line 149, in <module>
+         main()
+       File "/usr/local/bin/ffurls.py", line 146, in main
+         convert_ff_to_org(ifname, ofname)
+       File "/usr/local/bin/ffurls.py", line 74, in convert_ff_to_org
+         ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+       File "/usr/local/bin/ffurls.py", line 39, in get_json_data
+         with open(fname, encoding='utf-8') as fin:
+     FileNotFoundError: [Errno 2] No such file or directory: '/home/guest/.mozilla/firefox/5x73w7th.default/sessionstore-backups/recovery.js'
+     [guest@localhost ffurls]$
+   #+END_EXAMPLE
+
 
 * Окружение проекта
 
 ** DONE Сделать Makefile
    - [X] Сделать сокращённы имена скриптов при установке
    - [X] Сделать ffurls.sh с вызовом скрипта по умоланию
+
+** DONE Автоматизировать установку текущей версии программы
+
+** DONE Добавить лицензию, объясняющую права использования
