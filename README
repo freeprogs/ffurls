@@ -27,18 +27,19 @@ Available formats:
 README
 
  1. Configuration
- 2. Installation
-   2.1 General installation
-   2.2 Installation to custom directories
-   2.3 How to uninstall the program
- 3. Operating
- 4. Files
- 5. Copyright
- 6. Licensing
- 7. Contacts
- 8. Bugs
- 9. Troubleshooting
-10. Acknowledgments
+ 2. Building
+ 3. Installation
+   3.1 General installation
+   3.2 Installation to custom directories
+   3.3 How to uninstall the program
+ 4. Operating
+ 5. Files
+ 6. Copyright
+ 7. Licensing
+ 8. Contacts
+ 9. Bugs
+10. Troubleshooting
+11. Acknowledgments
 
 ========================================================================
 
@@ -52,15 +53,29 @@ Another configuration of this program is automated in Makefile.
 Run `make help' to know available commands.
 
 
-2. INSTALLATION
+2. BUILDING
 
-2.1 General installation
+At first, you should build the program, run:
 
-At first, you should build program, run:
+   `make' or `make build' (these are equal commands)
 
-   `make' or `make build'
+It will create the `build' directory with files and directories ready
+for installation.
 
-When the program is built, you can install it, run:
+You can take these files directly, as they are ready for using.
+
+Also this file and another documentation can hold templates in the
+form `__NAME_OF_TEMPLATE__' so it is not clear what is this. But after
+building they are replaced and you can read everything. So if you
+don't understand any info because of them, look into the building
+directory, it will be there clear.
+
+
+3. INSTALLATION
+
+3.1 General installation
+
+When the program has built, you can install it, run:
 
    `sudo make install'
 
@@ -69,7 +84,7 @@ directory.
 By default shell scripts will be installed to the `$HOME/.env/scripts'
 directory.
 
-2.2 Installation to custom directories
+3.2 Installation to custom directories
 
 You can also replace build and install directories from the command
 line.
@@ -91,7 +106,7 @@ To change a default directory to a custom directory, just run:
 If you have built a custom directory, then while installation in some
 cases you should pass it again because make doesn't remember it.
 
-2.3 How to uninstall the program
+3.3 How to uninstall the program
 
 To uninstall the program run command:
 
@@ -101,7 +116,7 @@ If the program was installed to custom directories, you should pass
 these directories through variables to `make'.
 
 
-3. OPERATING
+4. OPERATING
 
 Most information how to operate with the program you can read in the
 help of ffurls.py. Just run:
@@ -149,7 +164,7 @@ Firefox data path. If this happens, make your own shell script, using
 existing scripts.
 
 
-4. FILES
+5. FILES
 
 README            This file.
 
@@ -176,12 +191,12 @@ ffurls-org.sh     The shell script for run `ffurls.py' and save to org
 Other files exist for building the program.
 
 
-5. COPYRIGHT
+6. COPYRIGHT
 
 __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
 
 
-6. LICENSING
+7. LICENSING
 
 You can read license in file LICENSE in the distribution or program
 documenatation (`/usr/share/doc/ffurls').
@@ -202,26 +217,25 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-7. CONTACTS
+8. CONTACTS
 
 Contact is unavailable at the moment. There is no stable contact
 address created yet.
 
 
-8. BUGS
+9. BUGS
 
 Contact for bugs is unavailable at the moment. There is no stable
 contact address created yet.
 
 
-9. TROUBLESHOOTING
+10. TROUBLESHOOTING
 
 Firefox can change its format (I caught such a case one time), so the
 program can lose the input file. If so, edit shell scripts or run
 `ffurls.py' manually with the new input file.
 
 
-10. ACKNOWLEDGMENTS
+11. ACKNOWLEDGMENTS
 
 At the moment I'm sole here __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__.
-
