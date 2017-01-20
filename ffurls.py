@@ -75,22 +75,28 @@ def text_to_file(fname, text):
     with open(fname, 'w', encoding='utf-8') as fout:
         fout.write(text)
 
-def replace_nones(seq, r1, r2):
+def replace_nones(seq, rep_left, rep_right):
     """Replace in sequence of pairs none values to replacement values.
 
     For example:
 
-      [(None, 1), (1, None), (None, None)]
+      [(1, 1),
+       (None, 1),
+       (1, None),
+       (None, None)]
 
       becomes:
 
-      [(r1, 1), (1, r2), (r1, r2)]
+      [(1, 1),
+       (rep_left, 1),
+       (1, rep_right),
+       (rep_left, rep_right)]
 
     """
-    for i1, i2 in seq:
-        o1 = i1 if i1 is not None else r1
-        o2 = i2 if i2 is not None else r2
-        yield o1, o2
+    for in_left, in_right in seq:
+        out_left = in_left if in_left is not None else rep_left
+        out_right = in_right if in_right is not None else rep_right
+        yield out_left, out_right
 
 def convert_ff_to_txt(ifname, ofname):
     """Convert Firefox tabs to the text file with title and urls."""
