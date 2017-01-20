@@ -163,7 +163,7 @@ def get_prog_args():
                         version='%(prog)s ' + 'v' + __version__)
     parser.add_argument('--license',
                         action='version',
-                        version= 'License: ' + __license__ +
+                        version='License: ' + __license__ +
                         ', see more details in file LICENSE'
                         ' or at <http://www.gnu.org/licenses/>.',
                         help='show program\'s license and exit')
