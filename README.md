@@ -1,17 +1,27 @@
 
+# ffurls
+
 Saves tabs opened in Firefox to a file in some format.
 
-Build the docs and read the README file in `build/ffurls'.
+---
+
+Build the docs and read the README file in _build/ffurls_.
 
 To build run:
 
-  ./configure
-  make
+```sh
+$ ./configure
+$ make
+```
 
 To install run:
 
-  sudo make install
+```sh
+$ sudo make install
+```
 
 To uninstall run:
 
-  sudo make uninstall
+```sh
+$ sudo make uninstall
+```
