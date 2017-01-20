@@ -50,6 +50,12 @@ import sys
 import argparse
 import json
 
+class SrcNotFoundError(FileNotFoundError):
+    """Source file not found exception."""
+
+class DstNotFoundError(FileNotFoundError):
+    """Destination file not found exception."""
+
 def get_json_data(fname):
     """Load json-data from file on file system."""
     with open(fname, encoding='utf-8') as fin:
@@ -100,24 +106,42 @@ def replace_nones(seq, rep_left, rep_right):
 
 def convert_ff_to_txt(ifname, ofname):
     """Convert Firefox tabs to the text file with title and urls."""
-    ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    try:
+        ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    except FileNotFoundError as exc:
+        raise SrcNotFoundError(exc)
     ffurls_replaced = replace_nones(ffurls, 'Unknown title', 'unknown')
     tustrs = ('{}\n{}'.format(t, u) for t, u in ffurls_replaced)
-    strings_to_file(ofname, tustrs)
+    try:
+        strings_to_file(ofname, tustrs)
+    except FileNotFoundError as exc:
+        raise DstNotFoundError(exc)
 
 def convert_ff_to_html(ifname, ofname):
     """Convert Firefox tabs to the html file with title and urls."""
-    ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    try:
+        ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    except FileNotFoundError as exc:
+        raise SrcNotFoundError(exc)
     ffurls_replaced = replace_nones(ffurls, 'Unknown title', 'unknown')
     html_page = make_html_page(ffurls_replaced)
-    text_to_file(ofname, html_page)
+    try:
+        text_to_file(ofname, html_page)
+    except FileNotFoundError as exc:
+        raise DstNotFoundError(exc)
 
 def convert_ff_to_org(ifname, ofname):
     """Convert Firefox tabs to the org file with title and urls."""
-    ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    try:
+        ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    except FileNotFoundError as exc:
+        raise SrcNotFoundError(exc)
     ffurls_replaced = replace_nones(ffurls, 'Unknown title', 'unknown')
     org_text = make_org_text(ffurls_replaced)
-    text_to_file(ofname, org_text)
+    try:
+        text_to_file(ofname, org_text)
+    except FileNotFoundError as exc:
+        raise DstNotFoundError(exc)
 
 def make_html_page(seq):
     """Make html-page from sequence of (title, url) pairs."""
@@ -199,8 +223,11 @@ def main():
             convert_ff_to_html(ifname, ofname)
         elif oftype == 'org':
             convert_ff_to_org(ifname, ofname)
-    except FileNotFoundError:
+    except SrcNotFoundError:
         print_error('source data file not found: {}'.format(ifname))
+        return 1
+    except DstNotFoundError:
+        print_error('can\'t create output file: {}'.format(ofname))
         return 1
     return 0
 
