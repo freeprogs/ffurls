@@ -26,6 +26,7 @@ Available formats:
 
 README
 
+ 0. Requirements
  1. Configuration
  2. Building
  3. Installation
@@ -42,6 +43,21 @@ README
 11. Acknowledgments
 
 ========================================================================
+
+0. REQUIREMENTS
+
+This program has tested in Linux Fedora 20 and Mozilla Firefox 38.0.5.
+
+It may work with lower versions of Firefox and may not work with
+higher versions of Firefox due uncontrolled changes made in the
+browser.
+
+For other systems (macOS, Windows) this program wasn't tested and may
+work, but it is not guaranteed.
+
+Also to install program you should have folder Download in your home
+directory because shell scripts save output files there.
+
 
 1. CONFIGURATION
 
