@@ -273,9 +273,22 @@ or use the issue system on
 
 10. TROUBLESHOOTING
 
-Firefox can change its format (I caught such a case one time), so the
-program can lose the input file. If so, edit shell scripts or run
+1)
+Firefox can change its format (I caught such a case one time), so
+the program can lose the input file. If so, edit shell scripts or run
 `ffurls.py' manually with the new input file.
+
+2)
+In some cases Firefox behaves like it has open tabs, but don't make
+the file with them, or it makes this file, but there are empty links
+or not all links. In such a case you should wait some time (a minute)
+until Firefox creates it normally. It is a recovery file, therefore it
+may work with a delay.
+
+Same thing may happen when you try to save tabs when Firefox is not
+running. It may delete this file or the file contains wrong links. In
+this case just open links in Firefox and wait a minute until it will
+be ready and then save.
 
 
 11. ACKNOWLEDGMENTS
