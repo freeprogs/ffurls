@@ -131,6 +131,9 @@ To uninstall the program run command:
 If the program was installed to custom directories, you should pass
 these directories through variables to `make'.
 
+Note: After uninstall all users in the system can't use the program
+because it has deleted.
+
 
 4. OPERATING
 
