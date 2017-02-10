@@ -189,7 +189,7 @@ LICENSE           The text of license.
 ffurls.py         The main program which parses Firefox file and saves
                   output.
 
-ffurls.sh         The shell script for run defualt shell script
+ffurls.sh         The shell script for run default shell script
                   (`ffurls-org.sh').
 
 These shell scripts will be renamed after installation for
