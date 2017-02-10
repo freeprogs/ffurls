@@ -153,6 +153,23 @@ running it by name. That is why shell scripts goes there. I don't mess
 system directories with my scripts. Only ffurls.py goes to the system
 directory because it is a general program for any user in the system.
 
+To change ~/.bash_profile open it and search string:
+
+  `PATH=/bin:/sbin'
+
+Then edit it to the form:
+
+  `PATH=/bin:/sbin:$HOME/.env/scripts'
+
+After system reboot the user will see this path in every its
+console. Try command:
+
+  `echo $PATH'
+
+It will print the path with the new appended directory. Now, all
+scripts in this directory becomes available for run just by their
+names without any path specification.
+
 If you have added this directory and wrote it to the PATH variable,
 you can run shell scripts by names. If you don't want this directory,
 just change the path for shell scripts in the `sudo make install'
