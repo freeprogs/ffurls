@@ -293,6 +293,10 @@ running. It may delete this file or the file contains wrong links. In
 this case just open links in Firefox and wait a minute until it will
 be ready and then save.
 
+3)
+If the program prints a weird message that it can't save the output
+file, then check existence of the ~/Downloads directory.
+
 
 11. ACKNOWLEDGMENTS
 
