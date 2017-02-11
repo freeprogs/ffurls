@@ -4,8 +4,8 @@ m4_define(__PROGRAM_AUTHOR__, Slava)m4_dnl
 m4_define(__PROGRAM_AUTHOR_EMAIL__, <freeprogs.feedback@yandex.ru>)m4_dnl
 m4_define(__PROGRAM_WEBSITE__, http://freeprogs.pen.io)m4_dnl
 m4_define(__PROGRAM_SOURCES__, https://github.com/freeprogs/ffurls.git)m4_dnl
-m4_define(__PROGRAM_DAY__, 19)m4_dnl
-m4_define(__PROGRAM_MONTH__, Jan)m4_dnl
+m4_define(__PROGRAM_DAY__, 11)m4_dnl
+m4_define(__PROGRAM_MONTH__, Feb)m4_dnl
 m4_define(__PROGRAM_YEAR__, 2017)m4_dnl
 m4_define(__PROGRAM_FIRST_YEAR__, 2016)m4_dnl
 m4_define(__PROGRAM_COPYRIGHT__, `Copyright (C) __PROGRAM_FIRST_YEAR__-__PROGRAM_YEAR__')m4_dnl

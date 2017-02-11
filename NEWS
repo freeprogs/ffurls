@@ -11,6 +11,18 @@ Changed
 
 Fixed
 
+[1.0.3rc1] - 2017-02-11
+
+Added
+- Requirements information in README
+- Troubleshooting information in README
+- Real author's address and website
+- Project description in README.md
+
+Fixed
+- Incorrect work when no input file
+- Incorrect work when cannot write output file
+
 [1.0.2] - 2017-01-19
 
 Added
