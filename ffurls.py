@@ -50,6 +50,12 @@ import sys
 import argparse
 import json
 
+class SrcNotFoundError(FileNotFoundError):
+    """Source file not found exception."""
+
+class DstNotFoundError(FileNotFoundError):
+    """Destination file not found exception."""
+
 def get_json_data(fname):
     """Load json-data from file on file system."""
     with open(fname, encoding='utf-8') as fin:
@@ -75,43 +81,67 @@ def text_to_file(fname, text):
     with open(fname, 'w', encoding='utf-8') as fout:
         fout.write(text)
 
-def replace_nones(seq, r1, r2):
+def replace_nones(seq, rep_left, rep_right):
     """Replace in sequence of pairs none values to replacement values.
 
     For example:
 
-      [(None, 1), (1, None), (None, None)]
+      [(1, 1),
+       (None, 1),
+       (1, None),
+       (None, None)]
 
       becomes:
 
-      [(r1, 1), (1, r2), (r1, r2)]
+      [(1, 1),
+       (rep_left, 1),
+       (1, rep_right),
+       (rep_left, rep_right)]
 
     """
-    for i1, i2 in seq:
-        o1 = i1 if i1 is not None else r1
-        o2 = i2 if i2 is not None else r2
-        yield o1, o2
+    for in_left, in_right in seq:
+        out_left = in_left if in_left is not None else rep_left
+        out_right = in_right if in_right is not None else rep_right
+        yield out_left, out_right
 
 def convert_ff_to_txt(ifname, ofname):
     """Convert Firefox tabs to the text file with title and urls."""
-    ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    try:
+        ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    except FileNotFoundError as exc:
+        raise SrcNotFoundError(exc)
     ffurls_replaced = replace_nones(ffurls, 'Unknown title', 'unknown')
     tustrs = ('{}\n{}'.format(t, u) for t, u in ffurls_replaced)
-    strings_to_file(ofname, tustrs)
+    try:
+        strings_to_file(ofname, tustrs)
+    except FileNotFoundError as exc:
+        raise DstNotFoundError(exc)
 
 def convert_ff_to_html(ifname, ofname):
     """Convert Firefox tabs to the html file with title and urls."""
-    ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    try:
+        ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    except FileNotFoundError as exc:
+        raise SrcNotFoundError(exc)
     ffurls_replaced = replace_nones(ffurls, 'Unknown title', 'unknown')
     html_page = make_html_page(ffurls_replaced)
-    text_to_file(ofname, html_page)
+    try:
+        text_to_file(ofname, html_page)
+    except FileNotFoundError as exc:
+        raise DstNotFoundError(exc)
 
 def convert_ff_to_org(ifname, ofname):
     """Convert Firefox tabs to the org file with title and urls."""
-    ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    try:
+        ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+    except FileNotFoundError as exc:
+        raise SrcNotFoundError(exc)
     ffurls_replaced = replace_nones(ffurls, 'Unknown title', 'unknown')
     org_text = make_org_text(ffurls_replaced)
-    text_to_file(ofname, org_text)
+    try:
+        text_to_file(ofname, org_text)
+    except FileNotFoundError as exc:
+        raise DstNotFoundError(exc)
 
 def make_html_page(seq):
     """Make html-page from sequence of (title, url) pairs."""
@@ -163,7 +193,7 @@ def get_prog_args():
                         version='%(prog)s ' + 'v' + __version__)
     parser.add_argument('--license',
                         action='version',
-                        version= 'License: ' + __license__ +
+                        version='License: ' + __license__ +
                         ', see more details in file LICENSE'
                         ' or at <http://www.gnu.org/licenses/>.',
                         help='show program\'s license and exit')
@@ -193,8 +223,11 @@ def main():
             convert_ff_to_html(ifname, ofname)
         elif oftype == 'org':
             convert_ff_to_org(ifname, ofname)
-    except FileNotFoundError:
+    except SrcNotFoundError:
         print_error('source data file not found: {}'.format(ifname))
+        return 1
+    except DstNotFoundError:
+        print_error('can\'t create output file: {}'.format(ofname))
         return 1
     return 0
 
