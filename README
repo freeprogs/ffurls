@@ -55,8 +55,8 @@ browser.
 For other systems (macOS, Windows) this program wasn't tested and may
 work, but it is not guaranteed.
 
-Also to install program you should have folder Download in your home
-directory because shell scripts save output files there.
+Also to install program you should have folder `Downloads' in your
+home directory because shell scripts save output files there.
 
 
 1. CONFIGURATION
