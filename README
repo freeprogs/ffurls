@@ -298,7 +298,7 @@ be ready and then save.
 
 3)
 If the program prints a weird message that it can't save the output
-file, then check existence of the ~/Downloads directory.
+file, then check existence of the `~/Downloads' directory.
 
 
 11. ACKNOWLEDGMENTS
