@@ -197,7 +197,7 @@ text-file or read-only html-file or forced org-file or even Firefox
 will change the path to its files after update (as it happens
 sometimes), so you will need to use the main program to set the new
 Firefox data path. If this happens, make your own shell script, using
-existing scripts.
+contents of existing scripts as an example.
 
 
 5. FILES
