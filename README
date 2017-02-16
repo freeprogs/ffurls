@@ -204,6 +204,9 @@ contents of existing scripts as an example.
 
 README            This file.
 
+README.md         The file with project description in markdown.
+                  Needed for automatic description generated on web.
+
 LICENSE           The text of license.
 
 ffurls.py         The main program which parses Firefox file and saves
