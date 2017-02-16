@@ -158,7 +158,7 @@ directory because it is a general program for any user in the system.
 
 To change ~/.bash_profile open it and search string:
 
-  `PATH=/bin:/sbin'
+  `PATH=/bin:/sbin'  (this is an example value)
 
 Then edit it to the form:
 
