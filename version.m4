@@ -2,7 +2,8 @@ m4_changecom()m4_dnl
 m4_define(__PROGRAM_NAME__, ffurls)m4_dnl
 m4_define(__PROGRAM_AUTHOR__, Slava)m4_dnl
 m4_define(__PROGRAM_AUTHOR_EMAIL__, <freeprogs.feedback@yandex.ru>)m4_dnl
-m4_define(__PROGRAM_WEBSITE__, http://freeprogs.pen.io)m4_dnl
+m4_define(__PROGRAM_WEBSITE_FIRST__, http://freeprogs.pen.io)m4_dnl
+m4_define(__PROGRAM_WEBSITE_SECOND__, https://freeprogs.github.io/ffurls)m4_dnl
 m4_define(__PROGRAM_SOURCES__, https://github.com/freeprogs/ffurls.git)m4_dnl
 m4_define(__PROGRAM_DAY__, 11)m4_dnl
 m4_define(__PROGRAM_MONTH__, Feb)m4_dnl

@@ -259,7 +259,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 8. CONTACTS
 
 To know last information about the program go to
-__PROGRAM_WEBSITE__
+__PROGRAM_WEBSITE_FIRST__
+
+The secondary site
+__PROGRAM_WEBSITE_SECOND__
 
 Also to get last sources go to
 __PROGRAM_SOURCES__
