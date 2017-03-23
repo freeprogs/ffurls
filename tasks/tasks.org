@@ -59,13 +59,6 @@
 
    Добавить инструкции для такого пользователя в README.
 
-** DONE Сделать файл с заданиями более точным
-   CLOSED: [2017-03-24 Пт 09:17]
-   :PROPERTIES:
-   :issue_id: 18
-   :issue_type: task
-   :END:
-
 ** TASK Сделать архивацию заданий
    :PROPERTIES:
    :issue_id: 19

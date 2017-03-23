@@ -204,3 +204,15 @@
    :ARCHIVE_TODO: DONE
    :END:
 
+** DONE Сделать файл с заданиями более точным
+   CLOSED: [2017-03-24 Пт 09:17]
+   :PROPERTIES:
+   :issue_id: 18
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:18
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
