@@ -2,7 +2,7 @@
 
 # This script is a part of __PROGRAM_NAME__ __PROGRAM_VERSION__
 # This script saves tabs opened in Firefox as title and urls pairs in
-# ~/Download/firefox.txt file, using ffurls.py installed in the
+# ~/Download/firefox.txt file, using __PROGRAM_NAME__.py installed in the
 # system.
 #
 # __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
@@ -37,6 +37,6 @@ if [ -e "$opath" ]; then
     done
 fi
 
-ffurls.py -t text "$ipath" "$opath"
+__PROGRAM_NAME__.py -t text "$ipath" "$opath"
 
 exit 0

@@ -2,7 +2,7 @@
 
 # This script is a part of __PROGRAM_NAME__ __PROGRAM_VERSION__
 # This script saves tabs opened in Firefox as title and urls pairs in
-# ~/Download/firefox.org file, using ffurlso.sh installed in the
+# ~/Download/firefox.org file, using __PROGRAM_NAME__-org.sh installed in the
 # system.
 #
 # __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
@@ -20,4 +20,4 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-ffurlso.sh
+__PROGRAM_NAME__-org.sh

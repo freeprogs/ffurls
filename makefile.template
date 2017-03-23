@@ -1,7 +1,7 @@
 
 # This file is a part of __PROGRAM_NAME__ __PROGRAM_VERSION__
 #
-# This file installs ffurls.py and some scripts in the operating
+# This file installs __PROGRAM_NAME__.py and some scripts in the operating
 # system, cleans temporary files and directory in the project.
 #
 # __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
@@ -19,28 +19,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
 # Names section
 
-PROG = ffurls
+PROG = __PROGRAM_NAME__
 
-ME = Makefile
+SELF = Makefile
 
-TARGET_PYTHON_SCRIPT = ffurls.py
+TARGET_PYTHON_SCRIPT = __PROGRAM_NAME__.py
 
-TARGET_SHELL_SCRIPT_GENERAL = ffurls.sh
-
-TARGET_SHELL_SCRIPT_TEXT = ffurls-text.sh
-TARGET_RENAMED_SHELL_SCRIPT_TEXT = ffurlst.sh
-
-TARGET_SHELL_SCRIPT_HTML = ffurls-html.sh
-TARGET_RENAMED_SHELL_SCRIPT_HTML = ffurlsh.sh
-
-TARGET_SHELL_SCRIPT_ORG = ffurls-org.sh
-TARGET_RENAMED_SHELL_SCRIPT_ORG = ffurlso.sh
+TARGET_SHELL_SCRIPT_GENERAL = __PROGRAM_NAME__.sh
+TARGET_SHELL_SCRIPT_TEXT = __PROGRAM_NAME__-text.sh
+TARGET_SHELL_SCRIPT_HTML = __PROGRAM_NAME__-html.sh
+TARGET_SHELL_SCRIPT_ORG = __PROGRAM_NAME__-org.sh
 
 TARGET_README = README
 TARGET_NEWS = NEWS
-
 TARGET_LICENSE = LICENSE
 
 TEST_OUTPUT_FILES = file.txt file.html file.org
@@ -54,7 +48,7 @@ M4 = m4 -P
 build_dir = build
 BUILD_DIR = $(build_dir)
 
-docs_dir = $(PROG)
+docs_dir = docs
 DOCS_DIR = $(docs_dir)
 
 VERSION_M4 = version.m4
@@ -64,13 +58,13 @@ VERSION_M4 = version.m4
 
 home_dir = __USER_HOME__
 python_script_dir = /usr/local/bin
-shell_scripts_dir = $(home_dir)/.env/scripts
+shell_scripts_dir = /usr/local/bin
 system_docs_dir = /usr/share/doc
 
 PYTHON_SCRIPT_INSTALL_DIR = $(python_script_dir)
 SHELL_SCRIPTS_INSTALL_DIR = $(shell_scripts_dir)
 
-DOCS_INSTALL_DIR = $(system_docs_dir)/$(DOCS_DIR)
+DOCS_INSTALL_DIR = $(system_docs_dir)/$(PROG)
 
 
 # Commands
@@ -78,7 +72,7 @@ DOCS_INSTALL_DIR = $(system_docs_dir)/$(DOCS_DIR)
 all: build
 
 help:
-	@echo "usage: make [ build | clean | install | uninstall ]"
+	@echo "usage: make [ clean | install | uninstall ]"
 
 build:
 	@[ -d $(BUILD_DIR) ] $&& rm -rf $(BUILD_DIR)
@@ -109,7 +103,7 @@ build:
 clean:
 	@rm -rf $(TEST_OUTPUT_FILES) $(TEST_CACHE_DIR)
 	@rm -rf $(BUILD_DIR)
-	@rm -f $(ME)
+	@rm -f $(SELF)
 	@echo "$(PROG) has cleaned."
 
 install:
@@ -121,10 +115,10 @@ install:
 	install -d $(PYTHON_SCRIPT_INSTALL_DIR)
 	install $(BUILD_DIR)/$(TARGET_PYTHON_SCRIPT) $(PYTHON_SCRIPT_INSTALL_DIR)/$(TARGET_PYTHON_SCRIPT)
 	install -d $(SHELL_SCRIPTS_INSTALL_DIR)
-	install $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_GENERAL) $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_GENERAL)
-	install $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_TEXT) $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_TEXT)
-	install $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_HTML) $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_HTML)
-	install $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_ORG) $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_ORG)
+	install $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_GENERAL) $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_SHELL_SCRIPT_GENERAL)
+	install $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_TEXT) $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_SHELL_SCRIPT_TEXT)
+	install $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_HTML) $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_SHELL_SCRIPT_HTML)
+	install $(BUILD_DIR)/$(TARGET_SHELL_SCRIPT_ORG) $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_SHELL_SCRIPT_ORG)
 
 	install -d $(DOCS_INSTALL_DIR)
 	install -m 644 $(BUILD_DIR)/$(DOCS_DIR)/$(TARGET_README) $(DOCS_INSTALL_DIR)/$(TARGET_README)
@@ -134,11 +128,10 @@ install:
 uninstall:
 	rm -f $(PYTHON_SCRIPT_INSTALL_DIR)/$(TARGET_PYTHON_SCRIPT)
 	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_SHELL_SCRIPT_GENERAL)
-	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_TEXT)
-	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_HTML)
-	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_RENAMED_SHELL_SCRIPT_ORG)
+	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_SHELL_SCRIPT_TEXT)
+	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_SHELL_SCRIPT_HTML)
+	rm -f $(SHELL_SCRIPTS_INSTALL_DIR)/$(TARGET_SHELL_SCRIPT_ORG)
 	rm -rf $(DOCS_INSTALL_DIR)
-	@echo
 	@echo "$(PROG) has uninstalled."
 
 .PHONY: all help build clean install uninstall

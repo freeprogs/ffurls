@@ -73,7 +73,7 @@ Run `make help' to know available commands.
 
 At first, you should build the program, run:
 
-   `make' or `make build' (these are equal commands)
+   `make'
 
 It will create the `build' directory with files and directories ready
 for installation.
@@ -97,7 +97,7 @@ When the program has built, you can install it, run:
 
 By default the python script will be installed to the `/usr/local/bin'
 directory.
-By default shell scripts will be installed to the `$HOME/.env/scripts'
+By default shell scripts will be installed to the `/usr/local/bin'
 directory.
 
 3.2 Installation to custom directories
@@ -107,17 +107,17 @@ line.
 
 To change a default directory to a custom directory, just run:
 
-  `make "build_dir=mydir" build'
+  `make "build_dir=mydir"'  (default `build')
 
-  `make "home_dir=mydir" install'
+  `make "docs_dir=mydir"'  (default `docs')
 
-  `make "python_script_dir=mydir" install'
+  `sudo make "home_dir=mydir" install'  (default $HOME)
 
-  `make "shell_scripts_dir=mydir" install'
+  `sudo make "python_script_dir=mydir" install'  (default `/usr/local/bin')
 
-  `make "docs_dir=mydir" build'
+  `sudo make "shell_scripts_dir=mydir" install'  (default `/usr/local/bin')
 
-  `make "system_docs_dir=mydir" install'
+  `sudo make "system_docs_dir=mydir" install'  (default `/usr/share/doc')
 
 If you have built a custom directory, then while installation in some
 cases you should pass it again because make doesn't remember it.
@@ -138,60 +138,27 @@ because it has deleted.
 4. OPERATING
 
 Most information how to operate with the program you can read in the
-help of ffurls.py. Just run:
+help of __PROGRAM_NAME__.py. Just run:
 
-  `ffurls.py -h'
+  `__PROGRAM_NAME__.py -h'
 
 Some shell scripts are already operating with the main program. By
-default they are installed in `~/.env/scripts' and have prefix
-"ffurls" in their names.
-
-If you don't known what is this and how to use it, I explain it
-here. Directory `.env' is my custom directory for my files of bash
-configuration and my scripts. Another users can't see this directory
-and its contents, but I see and can backup it fast or copy to any
-user. The path to this directory is written into `~/.bash_profile'
-into the variable PATH, so I can run any script in this directory just
-running it by name. That is why shell scripts goes there. I don't mess
-system directories with my scripts. Only ffurls.py goes to the system
-directory because it is a general program for any user in the system.
-
-To change ~/.bash_profile open it and search string:
-
-  `PATH=/bin:/sbin'  (this is an example value)
-
-Then edit it to the form:
-
-  `PATH=/bin:/sbin:$HOME/.env/scripts'
-
-After system reboot the user will see this path in every its
-console. Try command:
-
-  `echo $PATH'
-
-It will print the path with the new appended directory. Now, all
-scripts in this directory becomes available for run just by their
-names without any path specification.
-
-If you have added this directory and wrote it to the PATH variable,
-you can run shell scripts by names. If you don't want this directory,
-just change the path for shell scripts in the `sudo make install'
-command and they will install to the system (or copy it by yourself to
-a system after install).
+default they are installed in `/usr/local/bin' and have prefix
+"__PROGRAM_NAME__" in their names.
 
 So, you can run:
 
-  `ffurls.sh'
+  `__PROGRAM_NAME__.sh'
 
-to save Firefox urls in default format (org-file).
+to save Firefox urls in a default format (org-file).
 
 Also you can run:
 
-  `ffurlst.sh' or `ffurlsh.sh' or `ffurlso.sh'
+  `__PROGRAM_NAME__-text.sh' or `__PROGRAM_NAME__-html.sh' or `__PROGRAM_NAME__-org.sh'
 
 to select output file format - text-file, html-file or org-file.
 
-Usually, you will save Firefox urls through `ffurls.sh' since it was
+Usually, you will save Firefox urls through `__PROGRAM_NAME__.sh' since it was
 made special for that. But in some cases you will want simple
 text-file or read-only html-file or forced org-file or even Firefox
 will change the path to its files after update (as it happens
@@ -209,23 +176,23 @@ README.md         The file with project description in markdown.
 
 LICENSE           The text of license.
 
-ffurls.py         The main program which parses Firefox file and saves
+__PROGRAM_NAME__.py         The main program which parses Firefox file and saves
                   output.
 
-ffurls.sh         The shell script for run default shell script
-                  (`ffurls-org.sh').
+__PROGRAM_NAME__.sh         The shell script for run default shell script
+                  (`__PROGRAM_NAME__-org.sh').
 
 These shell scripts will be renamed after installation for
 convenient using:
 
-ffurls-text.sh    The shell script for run `ffurls.py' and save to text
-                  output. Will be renamed to `ffurlst.sh'.
+__PROGRAM_NAME__-text.sh    The shell script for run `__PROGRAM_NAME__.py' and save to text
+                  output.
 
-ffurls-html.sh    The shell script for run `ffurls.py' and save to html
-                  output. Will be renamed to `ffurlsh.sh'.
+__PROGRAM_NAME__-html.sh    The shell script for run `__PROGRAM_NAME__.py' and save to html
+                  output.
 
-ffurls-org.sh     The shell script for run `ffurls.py' and save to org
-                  output. Will be renamed to `ffurlso.sh'.
+__PROGRAM_NAME__-org.sh     The shell script for run `__PROGRAM_NAME__.py' and save to org
+                  output.
 
 Other files exist for building the program.
 
@@ -238,7 +205,7 @@ __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
 7. LICENSING
 
 You can read license in file LICENSE in the distribution or program
-documenatation (`/usr/share/doc/ffurls').
+documenatation (`/usr/share/doc/__PROGRAM_NAME__').
 
 GNU GPLv3
 
@@ -258,24 +225,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 8. CONTACTS
 
-To know last information about the program go to
+To know last information about the program go to:
 __PROGRAM_WEBSITE_FIRST__
 
-The secondary site
+The secondary site:
 __PROGRAM_WEBSITE_SECOND__
 
-Also to get last sources go to
+Also to get last sources go to:
 __PROGRAM_SOURCES__
 
 
 9. BUGS
 
 To write about bug and features you can go to the website or write an
-email to
+email to:
 
   __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
 
-or use the issue system on
+or use the issue system on:
 
   __PROGRAM_SOURCES__
 
@@ -285,7 +252,7 @@ or use the issue system on
 1)
 Firefox can change its format (I caught such a case one time), so
 the program can lose the input file. If so, edit shell scripts or run
-`ffurls.py' manually with the new input file.
+`__PROGRAM_NAME__.py' manually with the new input file.
 
 2)
 In some cases Firefox behaves like it has open tabs, but don't make

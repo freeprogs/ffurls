@@ -11,6 +11,13 @@ Changed
 
 Fixed
 
+[1.0.3hf1] - 2017-03-23
+
+Changed
+- Removed short shell-script names while installation
+- Removed installation to $HOME directory
+- Program name can be changed in all project files
+
 [1.0.3] - 2017-02-16
 
 Added
@@ -91,31 +98,31 @@ Changed
 [1.0.1rc2a] - 2016-11-27
 
 Added
-- ffurls.sh running ffurls-org.sh as default
+- __PROGRAM_NAME__.sh running __PROGRAM_NAME__-org.sh as default
 - Project's Makefile
-- Version, author and date of the program to ffurls.py
+- Version, author and date of the program to __PROGRAM_NAME__.py
 
 [1.0.1rc2] - 2016-11-25
 
 Added
-- Option of org output to ffurls.py
-- ffurls-org.sh running ffurls.py with html output.
+- Option of org output to __PROGRAM_NAME__.py
+- __PROGRAM_NAME__-org.sh running __PROGRAM_NAME__.py with html output.
 
 [1.0.1rc1] - 2016-11-24
 
 Added
-- Option of html output to ffurls.py
-- ffurls-html.sh running ffurls.py with html output. Also it
+- Option of html output to __PROGRAM_NAME__.py
+- __PROGRAM_NAME__-html.sh running __PROGRAM_NAME__.py with html output. Also it
   increments the file name if the file exists already.
 
 Changed
-- ffurls.sh renamed to ffurls-text.sh
-- Previous ffurls.sh didn't increment file when repeating the saving.
+- __PROGRAM_NAME__.sh renamed to __PROGRAM_NAME__-text.sh
+- Previous __PROGRAM_NAME__.sh didn't increment file when repeating the saving.
   Now, it doesn't rewrite the file and make a new file with an
   incremented number in the file name.
 
 [1.0.0] - 2016-05-15
 
 Added
-- ffurls.py with text output
-- ffurls.sh running ffurls.py with default paths
+- __PROGRAM_NAME__.py with text output
+- __PROGRAM_NAME__.sh running __PROGRAM_NAME__.py with default paths
