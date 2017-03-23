@@ -48,15 +48,3 @@
   :COLUMNS:  %3issue_id(ID) %4issue_type(TYPE) %TODO %40ITEM %SCHEDULED %DEADLINE %1PRIORITY
   :ARCHIVE:  tasks_archive.org::* Архив окружения
   :END:
-
-** DONE Пройти установку для абсолютно нового пользователя
-   CLOSED: [2017-03-24 Пт 09:20]
-   :PROPERTIES:
-   :issue_id: 17
-   :issue_type: task
-   :END:
-
-   [2017-01-20 Пт]
-
-   Добавить инструкции для такого пользователя в README.
-

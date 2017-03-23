@@ -227,3 +227,20 @@
    :ARCHIVE_CATEGORY: tasks
    :ARCHIVE_TODO: DONE
    :END:
+
+** DONE Пройти установку для абсолютно нового пользователя
+   CLOSED: [2017-03-24 Пт 09:20]
+   :PROPERTIES:
+   :issue_id: 17
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:21
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
+   [2017-01-20 Пт]
+
+   Добавить инструкции для такого пользователя в README.
+
