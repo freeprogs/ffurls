@@ -19,6 +19,18 @@
    - [X] В виде org-файла
    - [X] В виде html-страницы
 
+** DONE Добавить информацию о версии
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 4
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:02
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Задачи
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
 * Архив багов
 
 * Архив окружения
