@@ -11,6 +11,13 @@ Changed
 
 Fixed
 
+[1.0.3hf1] - 2017-03-23
+
+Changed
+- Removed short shell-script names while installation
+- Removed installation to $HOME directory
+- Program name can be changed in all project files
+
 [1.0.3] - 2017-02-16
 
 Added
