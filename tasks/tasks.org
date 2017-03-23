@@ -42,31 +42,6 @@
   :ARCHIVE:  tasks_archive.org::* Архив багов
   :END:
 
-** FIXED Исправить исключение при отсутствии title на странице
-   CLOSED: [2017-03-24 Пт 08:49]
-   :PROPERTIES:
-   :issue_id: 11
-   :issue_type: bug
-   :END:
-   #+BEGIN_EXAMPLE
-     [guest@localhost ~]$ ffurls.sh
-     Traceback (most recent call last):
-       File "/usr/local/bin/ffurls.py", line 146, in <module>
-         main()
-       File "/usr/local/bin/ffurls.py", line 143, in main
-         convert_ff_to_org(ifname, ofname)
-       File "/usr/local/bin/ffurls.py", line 72, in convert_ff_to_org
-         org_text = make_org_text(ffurls)
-       File "/usr/local/bin/ffurls.py", line 110, in make_org_text
-         out = fmt.format('\n'.join(items))
-       File "/usr/local/bin/ffurls.py", line 108, in <genexpr>
-         items = ('  [[{1}][{0}]]'.format(t, u)
-       File "/usr/local/bin/ffurls.py", line 44, in get_ff_title_url_pairs
-         yield entry['title'], entry['url']
-     KeyError: 'title'
-     [guest@localhost ~]$
-   #+END_EXAMPLE
-
 ** FIXED Исправить исключение при очищенном кеше браузера
    CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
