@@ -49,13 +49,6 @@
   :ARCHIVE:  tasks_archive.org::* Архив окружения
   :END:
 
-** DONE Добавить лицензию, объясняющую права использования
-   CLOSED: [2017-03-24 Пт 08:49]
-   :PROPERTIES:
-   :issue_id: 16
-   :issue_type: task
-   :END:
-
 ** TASK Пройти установку для абсолютно нового пользователя
    :PROPERTIES:
    :issue_id: 17

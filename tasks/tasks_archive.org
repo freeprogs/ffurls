@@ -192,3 +192,15 @@
    :ARCHIVE_TODO: DONE
    :END:
 
+** DONE Добавить лицензию, объясняющую права использования
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 16
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:10
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
