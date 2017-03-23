@@ -1,0 +1,72 @@
+#+STARTUP: content logdone hideblocks
+#+TODO: TASK(t!) | DONE(d) CANCEL(c)
+#+TODO: BUG(b!) | FIXED(f) REJECT(r)
+#+PRIORITIES: A F C
+#+TAGS: current(c) testing(t)
+#+CONSTANTS: last_issue_id=19
+
+* Задачи
+  :PROPERTIES:
+  :COLUMNS:  %3issue_id(ID) %4issue_type(TYPE) %TODO %40ITEM %SCHEDULED %DEADLINE %1PRIORITY
+  :ARCHIVE:  tasks_archive.org::* Архив задач
+  :END:
+
+** TASK Автоматизировать поиск файла источника
+   :PROPERTIES:
+   :issue_id: 1
+   :issue_type: task
+   :END:
+
+** TASK Добавить опцию добавления в файл вывода
+   :PROPERTIES:
+   :issue_id: 2
+   :issue_type: task
+   :END:
+
+** TASK Добавить в скрипты параметризацию имён файлов вывода
+   :PROPERTIES:
+   :issue_id: 9
+   :issue_type: task
+   :END:
+
+** TASK Сделать юнит-тесты для функций
+   :PROPERTIES:
+   :issue_id: 10
+   :issue_type: task
+   :END:
+
+
+* Баги
+  :PROPERTIES:
+  :COLUMNS:  %3issue_id(ID) %4issue_type(TYPE) %TODO %40ITEM %SCHEDULED %DEADLINE %1PRIORITY
+  :ARCHIVE:  tasks_archive.org::* Архив багов
+  :END:
+
+
+* Окружение проекта
+  :PROPERTIES:
+  :COLUMNS:  %3issue_id(ID) %4issue_type(TYPE) %TODO %40ITEM %SCHEDULED %DEADLINE %1PRIORITY
+  :ARCHIVE:  tasks_archive.org::* Архив окружения
+  :END:
+
+** TASK Пройти установку для абсолютно нового пользователя
+   :PROPERTIES:
+   :issue_id: 17
+   :issue_type: task
+   :END:
+
+   [2017-01-20 Пт]
+
+   Добавить инструкции для такого пользователя в README.
+
+** TASK Сделать файл с заданиями более точным
+   :PROPERTIES:
+   :issue_id: 18
+   :issue_type: task
+   :END:
+
+** TASK Сделать архивацию заданий
+   :PROPERTIES:
+   :issue_id: 19
+   :issue_type: task
+   :END:

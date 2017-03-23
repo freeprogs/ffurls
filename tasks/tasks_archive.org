@@ -1,0 +1,206 @@
+#+STARTUP: content hideblocks
+#+TODO: TASK(t!) | DONE(d) CANCEL(c)
+#+TODO: BUG(b!) | FIXED(f) REJECT(r)
+
+* Архив задач
+
+** DONE Добавить выбор формата файла вывода
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 3
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:01
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Задачи
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+   - [X] В виде простого текста
+   - [X] В виде org-файла
+   - [X] В виде html-страницы
+
+** DONE Добавить информацию о версии
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 4
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:02
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Задачи
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
+** DONE Добавить описание модуля и функций для интерактивной помощи
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 5
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:03
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Задачи
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
+** DONE Переделать расширения в скриптах, включив в них точку
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 6
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:04
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Задачи
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
+** DONE Добавить информацию о версии, дате и авторе в скрипты
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 7
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:05
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Задачи
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
+** DONE Переделать ссылки в org-файле в элементы списка
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 8
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:05
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Задачи
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
+* Архив багов
+
+** FIXED Исправить исключение при отсутствии title на странице
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 11
+   :issue_type: bug
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:06
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Баги
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: FIXED
+   :END:
+   #+BEGIN_EXAMPLE
+     [guest@localhost ~]$ ffurls.sh
+     Traceback (most recent call last):
+       File "/usr/local/bin/ffurls.py", line 146, in <module>
+         main()
+       File "/usr/local/bin/ffurls.py", line 143, in main
+         convert_ff_to_org(ifname, ofname)
+       File "/usr/local/bin/ffurls.py", line 72, in convert_ff_to_org
+         org_text = make_org_text(ffurls)
+       File "/usr/local/bin/ffurls.py", line 110, in make_org_text
+         out = fmt.format('\n'.join(items))
+       File "/usr/local/bin/ffurls.py", line 108, in <genexpr>
+         items = ('  [[{1}][{0}]]'.format(t, u)
+       File "/usr/local/bin/ffurls.py", line 44, in get_ff_title_url_pairs
+         yield entry['title'], entry['url']
+     KeyError: 'title'
+     [guest@localhost ~]$
+   #+END_EXAMPLE
+
+** FIXED Исправить исключение при очищенном кеше браузера
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 12
+   :issue_type: bug
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:07
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Баги
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: FIXED
+   :END:
+   #+BEGIN_EXAMPLE
+     [guest@localhost ffurls]$ ffurls.sh --version
+     Traceback (most recent call last):
+       File "/usr/local/bin/ffurls.py", line 149, in <module>
+         main()
+       File "/usr/local/bin/ffurls.py", line 146, in main
+         convert_ff_to_org(ifname, ofname)
+       File "/usr/local/bin/ffurls.py", line 74, in convert_ff_to_org
+         ffurls = get_ff_title_url_pairs(get_json_data(ifname))
+       File "/usr/local/bin/ffurls.py", line 39, in get_json_data
+         with open(fname, encoding='utf-8') as fin:
+     FileNotFoundError: [Errno 2] No such file or directory: '/home/guest/.mozilla/firefox/5x73w7th.default/sessionstore-backups/recovery.js'
+     [guest@localhost ffurls]$
+   #+END_EXAMPLE
+
+** FIXED Исправить ошибку при невозможности сохранения вывода
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 13
+   :issue_type: bug
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:07
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Баги
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: FIXED
+   :END:
+
+   [2017-01-20 Пт]
+
+   Сейчас он пишет, что не может найти входной файл, а на самом деле
+   не может записать выходной файл, так как не существует директории
+   Downloads.
+
+   Нужно разделить ошибки и при установке ещё подготовить всё.
+
+   [2017-01-20 Пт]
+
+   Подготовка директории для сохранения файла вывода напоролась на
+   права директории. Поэтому эта часть будет вынесена из бага в
+   отдельное задание.
+
+
+* Архив окружения
+
+** DONE Сделать Makefile
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 14
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:08
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+   - [X] Сделать сокращённы имена скриптов при установке
+   - [X] Сделать ffurls.sh с вызовом скрипта по умоланию
+
+** DONE Автоматизировать установку текущей версии программы
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 15
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:09
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
+** DONE Добавить лицензию, объясняющую права использования
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 16
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:10
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
