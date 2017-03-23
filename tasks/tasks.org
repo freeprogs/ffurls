@@ -81,7 +81,7 @@
   :ARCHIVE:  tasks_archive.org::* Архив багов
   :END:
 
-** DONE Исправить исключение при отсутствии title на странице
+** FIXED Исправить исключение при отсутствии title на странице
    :PROPERTIES:
    :issue_id: 11
    :issue_type: bug
@@ -105,7 +105,7 @@
      [guest@localhost ~]$
    #+END_EXAMPLE
 
-** DONE Исправить исключение при очищенном кеше браузера
+** FIXED Исправить исключение при очищенном кеше браузера
    :PROPERTIES:
    :issue_id: 12
    :issue_type: bug
@@ -125,7 +125,7 @@
      [guest@localhost ffurls]$
    #+END_EXAMPLE
 
-** DONE Исправить ошибку при невозможности сохранения вывода
+** FIXED Исправить ошибку при невозможности сохранения вывода
    :PROPERTIES:
    :issue_id: 13
    :issue_type: bug
