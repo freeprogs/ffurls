@@ -24,6 +24,7 @@
    :END:
 
 ** DONE Добавить выбор формата файла вывода
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 3
    :issue_type: task
@@ -33,30 +34,35 @@
    - [X] В виде html-страницы
 
 ** DONE Добавить информацию о версии
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 4
    :issue_type: task
    :END:
 
 ** DONE Добавить описание модуля и функций для интерактивной помощи
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 5
    :issue_type: task
    :END:
 
 ** DONE Переделать расширения в скриптах, включив в них точку
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 6
    :issue_type: task
    :END:
 
 ** DONE Добавить информацию о версии, дате и авторе в скрипты
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 7
    :issue_type: task
    :END:
 
 ** DONE Переделать ссылки в org-файле в элементы списка
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 8
    :issue_type: task
@@ -82,6 +88,7 @@
   :END:
 
 ** FIXED Исправить исключение при отсутствии title на странице
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 11
    :issue_type: bug
@@ -106,6 +113,7 @@
    #+END_EXAMPLE
 
 ** FIXED Исправить исключение при очищенном кеше браузера
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 12
    :issue_type: bug
@@ -126,6 +134,7 @@
    #+END_EXAMPLE
 
 ** FIXED Исправить ошибку при невозможности сохранения вывода
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 13
    :issue_type: bug
@@ -153,6 +162,7 @@
   :END:
 
 ** DONE Сделать Makefile
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 14
    :issue_type: task
@@ -161,12 +171,14 @@
    - [X] Сделать ffurls.sh с вызовом скрипта по умоланию
 
 ** DONE Автоматизировать установку текущей версии программы
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 15
    :issue_type: task
    :END:
 
 ** DONE Добавить лицензию, объясняющую права использования
+   CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
    :issue_id: 16
    :issue_type: task
