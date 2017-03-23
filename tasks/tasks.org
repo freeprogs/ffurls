@@ -49,15 +49,6 @@
   :ARCHIVE:  tasks_archive.org::* Архив окружения
   :END:
 
-** DONE Сделать Makefile
-   CLOSED: [2017-03-24 Пт 08:49]
-   :PROPERTIES:
-   :issue_id: 14
-   :issue_type: task
-   :END:
-   - [X] Сделать сокращённы имена скриптов при установке
-   - [X] Сделать ffurls.sh с вызовом скрипта по умоланию
-
 ** DONE Автоматизировать установку текущей версии программы
    CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
