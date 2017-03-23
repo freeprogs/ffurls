@@ -109,15 +109,15 @@ To change a default directory to a custom directory, just run:
 
   `make "build_dir=mydir"'  (default `build')
 
-  `make "home_dir=mydir" install'
+  `make "docs_dir=mydir"'  (default `docs')
 
-  `make "python_script_dir=mydir" install'
+  `sudo make "home_dir=mydir" install'  (default $HOME)
 
-  `make "shell_scripts_dir=mydir" install'
+  `sudo make "python_script_dir=mydir" install'  (default `/usr/local/bin')
 
-  `make "docs_dir=mydir" build'
+  `sudo make "shell_scripts_dir=mydir" install'  (default `/usr/local/bin')
 
-  `make "system_docs_dir=mydir" install'
+  `sudo make "system_docs_dir=mydir" install'  (default `/usr/share/doc')
 
 If you have built a custom directory, then while installation in some
 cases you should pass it again because make doesn't remember it.
