@@ -49,13 +49,6 @@
   :ARCHIVE:  tasks_archive.org::* Архив окружения
   :END:
 
-** DONE Автоматизировать установку текущей версии программы
-   CLOSED: [2017-03-24 Пт 08:49]
-   :PROPERTIES:
-   :issue_id: 15
-   :issue_type: task
-   :END:
-
 ** DONE Добавить лицензию, объясняющую права использования
    CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:

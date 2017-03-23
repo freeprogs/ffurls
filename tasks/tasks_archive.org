@@ -179,3 +179,16 @@
    :END:
    - [X] Сделать сокращённы имена скриптов при установке
    - [X] Сделать ffurls.sh с вызовом скрипта по умоланию
+
+** DONE Автоматизировать установку текущей версии программы
+   CLOSED: [2017-03-24 Пт 08:49]
+   :PROPERTIES:
+   :issue_id: 15
+   :issue_type: task
+   :ARCHIVE_TIME: 2017-03-24 Пт 09:09
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+
