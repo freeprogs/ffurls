@@ -23,13 +23,6 @@
    :issue_type: task
    :END:
 
-** DONE Добавить информацию о версии, дате и авторе в скрипты
-   CLOSED: [2017-03-24 Пт 08:49]
-   :PROPERTIES:
-   :issue_id: 7
-   :issue_type: task
-   :END:
-
 ** DONE Переделать ссылки в org-файле в элементы списка
    CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
