@@ -73,7 +73,7 @@ Run `make help' to know available commands.
 
 At first, you should build the program, run:
 
-   `make' or `make build' (these are equal commands)
+   `make'
 
 It will create the `build' directory with files and directories ready
 for installation.
@@ -107,7 +107,7 @@ line.
 
 To change a default directory to a custom directory, just run:
 
-  `make "build_dir=mydir" build'
+  `make "build_dir=mydir"'  (default `build')
 
   `make "home_dir=mydir" install'
 
