@@ -23,16 +23,6 @@
    :issue_type: task
    :END:
 
-** DONE Добавить выбор формата файла вывода
-   CLOSED: [2017-03-24 Пт 08:49]
-   :PROPERTIES:
-   :issue_id: 3
-   :issue_type: task
-   :END:
-   - [X] В виде простого текста
-   - [X] В виде org-файла
-   - [X] В виде html-страницы
-
 ** DONE Добавить информацию о версии
    CLOSED: [2017-03-24 Пт 08:49]
    :PROPERTIES:
