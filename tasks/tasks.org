@@ -3,7 +3,7 @@
 #+TODO: BUG(b!) | FIXED(f) REJECT(r)
 #+PRIORITIES: A F C
 #+TAGS: current(c) testing(t)
-#+CONSTANTS: last_issue_id=19
+#+CONSTANTS: last_issue_id=20
 
 * Задачи
   :PROPERTIES:

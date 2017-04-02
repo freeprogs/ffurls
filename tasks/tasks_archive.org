@@ -245,6 +245,8 @@
 
 ** DONE Удалить $HOME из Makefile и README
    CLOSED: [2017-04-02 Вс 13:18]
+   :issue_id: 20
+   :issue_type: task
    :PROPERTIES:
    :ARCHIVE_TIME: 2017-04-02 Вс 13:20
    :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
