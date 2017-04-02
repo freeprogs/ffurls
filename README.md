@@ -11,7 +11,7 @@ This program has tested in Linux Fedora 20 and Mozilla Firefox 38.0.5.
 
 ### Building
 
-Build the docs and read the README file in _build/ffurls_.
+Build the docs and read the README file in _build/docs_.
 
 To build run:
 
