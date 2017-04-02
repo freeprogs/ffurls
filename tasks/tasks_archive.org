@@ -242,3 +242,13 @@
    [2017-01-20 Пт]
 
    Добавить инструкции для такого пользователя в README.
+
+** DONE Удалить $HOME из Makefile и README
+   CLOSED: [2017-04-02 Вс 13:18]
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2017-04-02 Вс 13:20
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:

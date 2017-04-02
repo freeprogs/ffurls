@@ -49,5 +49,3 @@
   :ARCHIVE:  tasks_archive.org::* Архив окружения
   :END:
 
-** DONE Удалить $HOME из Makefile и README
-   CLOSED: [2017-04-02 Вс 13:18]
