@@ -56,7 +56,6 @@ VERSION_M4 = version.m4
 
 # Install section
 
-home_dir = __USER_HOME__
 python_script_dir = /usr/local/bin
 shell_scripts_dir = /usr/local/bin
 system_docs_dir = /usr/share/doc

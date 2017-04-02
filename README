@@ -111,8 +111,6 @@ To change a default directory to a custom directory, just run:
 
   `make "docs_dir=mydir"'  (default `docs')
 
-  `sudo make "home_dir=mydir" install'  (default $HOME)
-
   `sudo make "python_script_dir=mydir" install'  (default `/usr/local/bin')
 
   `sudo make "shell_scripts_dir=mydir" install'  (default `/usr/local/bin')
