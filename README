@@ -180,9 +180,6 @@ __PROGRAM_NAME__.py         The main program which parses Firefox file and saves
 __PROGRAM_NAME__.sh         The shell script for run default shell script
                   (`__PROGRAM_NAME__-org.sh').
 
-These shell scripts will be renamed after installation for
-convenient using:
-
 __PROGRAM_NAME__-text.sh    The shell script for run `__PROGRAM_NAME__.py' and save to text
                   output.
 
