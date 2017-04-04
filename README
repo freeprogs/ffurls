@@ -46,7 +46,8 @@ README
 
 0. REQUIREMENTS
 
-This program has tested in Linux Fedora 20 and Mozilla Firefox 38.0.5.
+This program has tested in Linux Fedora 20 with Python 3.3.2 and
+Mozilla Firefox 38.0.5 .
 
 It may work with lower versions of Firefox and may not work with
 higher versions of Firefox due uncontrolled changes made in the
