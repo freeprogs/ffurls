@@ -7,7 +7,8 @@ Saves tabs opened in Firefox to a file in some format.
 
 ### Requirements
 
-This program has tested in Linux Fedora 20 and Mozilla Firefox 38.0.5.
+This program has tested in Linux Fedora 20 with Python 3.3.2 and
+Mozilla Firefox 38.0.5 .
 
 ### Building
 
