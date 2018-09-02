@@ -17,6 +17,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-m4 -P version.m4 makefile.m4 makefile.template > Makefile
+m4 -P m4/version.m4 m4/makefile.m4 makefile.template > Makefile
 
 echo "Makefile created, run \`make'."
