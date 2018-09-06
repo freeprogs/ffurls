@@ -3,7 +3,7 @@
 #+TODO: BUG(b!) | FIXED(f) REJECT(r)
 #+PRIORITIES: A F C
 #+TAGS: current(c) testing(t)
-#+CONSTANTS: last_issue_id=21
+#+CONSTANTS: last_issue_id=22
 
 * Задачи
   :PROPERTIES:
@@ -34,6 +34,22 @@
    :issue_id: 10
    :issue_type: task
    :END:
+
+** TASK Добавить скрипт распаковки recovery.js
+   :PROPERTIES:
+   :issue_id: 22
+   :issue_type: task
+   :END:
+   [2018-09-07 Пт]
+
+   В новых версиях Firefox файл recovery.js сжат внутренним форматом,
+   поэтому требуется сначала его распаковать, а потом обрабатывать,
+   как прежде.
+
+   Так как нужно сохранять и старый подход для старой версии Firefox,
+   распаковка будет добавлена как опция. При этом решение о
+   предварительной распаковке файла должно приниматься внешними
+   скриптами на shell, использующими базовые скрипты на python.
 
 
 * Баги
