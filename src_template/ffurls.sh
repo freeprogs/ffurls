@@ -40,10 +40,12 @@ print_help()
     {
         echo "usage: $PROGNAME [ --text | --org | --html ]"
         echo ""
-        echo "  noarg   --  default."
-        echo "  --text  --  text."
-        echo "  --org   --  org."
-        echo "  --html  --  html."
+        echo "Save open browser Firefox tabs (title and url) to the file with a given format."
+        echo ""
+        echo "  noarg   --  The default format from config file is used."
+        echo "  --text  --  Save output to text format."
+        echo "  --org   --  Save output to org format."
+        echo "  --html  --  Save output to html format."
         echo ""
     } >&2
 }
