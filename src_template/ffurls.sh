@@ -17,3 +17,71 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+PROGNAME=`basename $0`
+
+# Print an error message to stderr
+# error(str)
+error()
+{
+    echo "error: $PROGNAME: $1" >&2
+}
+
+# Print short help about this script
+# usage()
+usage()
+{
+    echo "Try \`$PROGNAME --help' for more information." >&2
+}
+
+# Print full help about this script
+# print_help()
+print_help()
+{
+    {
+        echo "usage: $PROGNAME [ --text | --org | --html ]"
+        echo ""
+        echo "  noarg   --  default."
+        echo "  --text  --  text."
+        echo "  --org   --  org."
+        echo "  --html  --  html."
+        echo ""
+    } >&2
+}
+
+# Run main script operations
+# main([cmdarg])
+main()
+{
+    if [ $# -ne 0 -a "$1" = "--help" ]; then
+        print_help
+        return 1
+    fi
+    usage
+    if [ $# -eq 0 ]; then
+        :
+        return 0
+    fi
+    if [ $# -ne 0 ]; then
+        case $1 in
+        "--text")
+            :
+            return 0
+            ;;
+        "--org")
+            :
+            return 0
+            ;;
+        "--html")
+            :
+            return 0
+            ;;
+        *)
+            :
+            return 0
+            ;;
+        esac
+    fi
+}
+
+main "$@" || exit 1
+exit 0
