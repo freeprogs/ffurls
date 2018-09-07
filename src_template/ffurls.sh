@@ -118,6 +118,15 @@ extract_tabs()
 # main([cmdarg])
 main()
 {
+    local config_file
+    local browser_dir
+    local output_dir
+    local ofname
+    local ofext_text
+    local ofext_org
+    local ofext_html
+    local default_ofmt
+
     if [ $# -ne 0 -a "$1" = "--help" ]; then
         print_help
         return 1
