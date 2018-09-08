@@ -19,6 +19,9 @@
 
 PROGNAME=`basename $0`
 
+BROVERTYP_1=0
+BROVERTYP_2=1
+
 # Print an error message to stderr
 # error(str)
 error()
@@ -101,6 +104,45 @@ get_config_default_ofmt()
 
 # Get tabs from browser Firefox and save them to the output file in a
 # given format.
+# extract_tabs_from_unzipped(
+#     format,
+#     browser_dir,
+#     output_dir,
+#     output_filename,
+#     output_fileext_text,
+#     output_fileext_org,
+#     output_fileext_html)
+extract_tabs_from_unzipped()
+{
+    echo unzipped $@
+    return 0
+}
+
+# Get tabs from browser Firefox and save them to the output file in a
+# given format.
+# extract_tabs(
+#     format,
+#     browser_dir,
+#     output_dir,
+#     output_filename,
+#     output_fileext_text,
+#     output_fileext_org,
+#     output_fileext_html)
+extract_tabs_from_zipped()
+{
+    echo zipped $@
+    return 0;
+}
+
+# Detect browser version type to determine strategy for parsing internal files
+# detect_browser_version_type(dir)
+detect_browser_version_type()
+{
+    echo $BROVERTYP_1;
+}
+
+# Get tabs from browser Firefox and save them to the output file in a
+# given format.
 # extract_tabs(
 #     format,
 #     browser_dir,
@@ -111,7 +153,42 @@ get_config_default_ofmt()
 #     output_fileext_html)
 extract_tabs()
 {
-    echo $@
+    local format=$1
+    local browser_dir=$2
+    local output_dir=$3
+    local output_filename=$4
+    local output_fileext_text=$5
+    local output_fileext_org=$6
+    local output_fileext_html=$7
+    local brovertype
+
+    brovertype=$(detect_browser_version_type "$browser_dir")
+    case $brovertype in
+    $BROVERTYP_1)
+        extract_tabs_from_unzipped \
+            "$format" \
+            "$browser_dir" \
+            "$output_dir" \
+            "$output_filename" \
+            "$output_fileext_text" \
+            "$output_fileext_org" \
+            "$output_fileext_html"  || return 1
+        ;;
+    $BROVERTYP_2)
+        extract_tabs_from_zipped \
+            "$format" \
+            "$browser_dir" \
+            "$output_dir" \
+            "$output_filename" \
+            "$output_fileext_text" \
+            "$output_fileext_org" \
+            "$output_fileext_html"  || return 1
+        ;;
+    *)
+        error "unrecognized browser version type: $brovertype"
+        return 1
+        ;;
+    esac
     return 0
 }
 
