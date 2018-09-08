@@ -21,6 +21,7 @@ PROGNAME=`basename $0`
 
 BROVERTYP_1=0
 BROVERTYP_2=1
+BROVERTYP_UNKNOWN=undefined
 
 # Print an error message to stderr
 # error(str)
@@ -57,14 +58,16 @@ print_help()
 # get_config_browser_dir(file)
 get_config_browser_dir()
 {
-    echo "~/.mozilla"
+    local s="~/.mozilla"
+    echo "${s//\~/$HOME}"
 }
 
 # Get from config file output directory
 # get_config_output_dir(file)
 get_config_output_dir()
 {
-    echo "~/Downloads"
+    local s="~/Downloads"
+    echo "${s//\~/$HOME}"
 }
 
 # Get from config file output file name
@@ -138,7 +141,21 @@ extract_tabs_from_zipped()
 # detect_browser_version_type(dir)
 detect_browser_version_type()
 {
-    echo $BROVERTYP_1;
+    local dir=$1
+    local brovertyp_1_file=$(\
+        ls "$dir"/firefox/*.default/sessionstore-backups/recovery.js \
+            2>/dev/null)
+    local brovertyp_2_file=$(\
+        ls "$dir"/firefox/*.default/sessionstore-backups/recovery.jsonlz4 \
+            2>/dev/null)
+
+    if [ -f "$brovertyp_1_file" ]; then
+        echo $BROVERTYP_1
+    elif [ -f "$brovertyp_2_file" ]; then
+        echo $BROVERTYP_2
+    else
+        echo $BROVERTYP_UNKNOWN
+    fi
 }
 
 # Get tabs from browser Firefox and save them to the output file in a
