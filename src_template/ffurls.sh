@@ -142,25 +142,49 @@ main()
     ofext_html=$(get_config_ofext_html "$config_file")
     default_ofmt=$(get_config_default_ofmt "$config_file")
     if [ $# -eq 0 ]; then
-        extract_tabs "$default_ofmt" "$browser_dir" "$output_dir" \
-                     "$ofname" "$ofext_text" "$ofext_org" "$ofext_html" || return 1
+        extract_tabs \
+            "$default_ofmt" \
+            "$browser_dir" \
+            "$output_dir" \
+            "$ofname" \
+            "$ofext_text" \
+            "$ofext_org" \
+            "$ofext_html" || return 1
         return 0
     fi
     if [ $# -ne 0 ]; then
         case $1 in
         "--text")
-            extract_tabs "text" "$browser_dir" "$output_dir" \
-                         "$ofname" "$ofext_text" "$ofext_org" "$ofext_html" || return 1
+            extract_tabs \
+                "text" \
+                "$browser_dir" \
+                "$output_dir" \
+                "$ofname" \
+                "$ofext_text" \
+                "$ofext_org" \
+                "$ofext_html" || return 1
             return 0
             ;;
         "--org")
-            extract_tabs "org" "$browser_dir" "$output_dir" \
-                         "$ofname" "$ofext_text" "$ofext_org" "$ofext_html" || return 1
+            extract_tabs \
+                "org" \
+                "$browser_dir" \
+                "$output_dir" \
+                "$ofname" \
+                "$ofext_text" \
+                "$ofext_org" \
+                "$ofext_html" || return 1
             return 0
             ;;
         "--html")
-            extract_tabs "html" "$browser_dir" "$output_dir" \
-                         "$ofname" "$ofext_text" "$ofext_org" "$ofext_html" || return 1
+            extract_tabs \
+                "html" \
+                "$browser_dir" \
+                "$output_dir" \
+                "$ofname" \
+                "$ofext_text" \
+                "$ofext_org" \
+                "$ofext_html" || return 1
             return 0
             ;;
         *)
