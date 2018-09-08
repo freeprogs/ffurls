@@ -101,13 +101,14 @@ get_config_default_ofmt()
 
 # Get tabs from browser Firefox and save them to the output file in a
 # given format.
-# extract_tabs(format,
-#              browser_dir,
-#              output_dir,
-#              output_filename,
-#              output_fileext_text,
-#              output_fileext_org,
-#              output_fileext_html)
+# extract_tabs(
+#     format,
+#     browser_dir,
+#     output_dir,
+#     output_filename,
+#     output_fileext_text,
+#     output_fileext_org,
+#     output_fileext_html)
 extract_tabs()
 {
     echo $@
