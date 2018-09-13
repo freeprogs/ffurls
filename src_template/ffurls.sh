@@ -24,7 +24,7 @@ BROVERTYP_2=1
 BROVERTYP_UNKNOWN=undefined
 
 SUBPROGRAM_PARSE=__PROGRAM_NAME__"_parse.py"
-SUBPROGRAM_UNZIP=__PROGRAM_NAME__-unzip.py
+SUBPROGRAM_UNZIP=__PROGRAM_NAME__"_unzip.py"
 
 # Print an error message to stderr
 # error(str)
