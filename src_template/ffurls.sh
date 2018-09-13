@@ -131,7 +131,11 @@ get_config_ofext_org()
 # get_config_ofext_html(file)
 get_config_ofext_html()
 {
-    echo "html"
+    local file=$1
+    local out
+
+    out=$(cat "$file" | get_config_value "output_file_extension_html")
+    echo "$out"
 }
 
 # Get from config file default output format
