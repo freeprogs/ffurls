@@ -86,8 +86,12 @@ get_config_browser_dir()
 # get_config_output_dir(file)
 get_config_output_dir()
 {
-    local s="~/Downloads"
-    echo "${s//\~/$HOME}"
+    local file=$1
+    local out
+
+    out=$(cat "$file" | get_config_value "output_directory")
+    out="${out//\~/$HOME}"
+    echo "$out"
 }
 
 # Get from config file output file name
