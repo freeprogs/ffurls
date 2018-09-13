@@ -142,7 +142,11 @@ get_config_ofext_html()
 # get_config_default_ofmt(file)
 get_config_default_ofmt()
 {
-    echo "org"
+    local file=$1
+    local out
+
+    out=$(cat "$file" | get_config_value "default_output_format")
+    echo "$out"
 }
 
 # Get tabs from browser Firefox and save them to the output file in a
