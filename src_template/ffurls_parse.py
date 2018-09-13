@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# __PROGRAM_NAME__ __PROGRAM_VERSION__
+# This script is a part of __PROGRAM_NAME__ __PROGRAM_VERSION__
 #
 # __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
 #
