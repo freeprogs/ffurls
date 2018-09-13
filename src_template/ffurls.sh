@@ -120,7 +120,11 @@ get_config_ofext_text()
 # get_config_ofext_org(file)
 get_config_ofext_org()
 {
-    echo "org"
+    local file=$1
+    local out
+
+    out=$(cat "$file" | get_config_value "output_file_extension_org")
+    echo "$out"
 }
 
 # Get from config file output file extension for html format
