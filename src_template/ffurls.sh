@@ -23,6 +23,8 @@ BROVERTYP_1=0
 BROVERTYP_2=1
 BROVERTYP_UNKNOWN=undefined
 
+SUBPROGRAM_PARSE=__PROGRAM_NAME__-parse.py
+
 # Print an error message to stderr
 # error(str)
 error()
@@ -117,7 +119,53 @@ get_config_default_ofmt()
 #     output_fileext_html)
 extract_tabs_from_unzipped()
 {
-    echo unzipped $@
+    local format=$1
+    local browser_dir=$2
+    local output_dir=$3
+    local output_filename=$4
+    local output_fileext_text=$5
+    local output_fileext_org=$6
+    local output_fileext_html=$7
+
+    local ipath
+    local ofmt
+    local odir
+    local ofname
+    local ofext
+    local opath
+    local n
+
+    ipath=$(\
+        ls "$browser_dir"/firefox/*.default/sessionstore-backups/recovery.js \
+            2>/dev/null)
+
+    ofmt=$format
+    odir=$output_dir
+    ofname=$output_filename
+
+    case $format in
+    text)
+        ofext=$output_fileext_text
+        ;;
+    org)
+        ofext=$output_fileext_org
+        ;;
+    html)
+        ofext=$output_fileext_html
+        ;;
+    esac
+
+    opath="$odir/$ofname.$ofext"
+
+    if [ -e "$opath" ]; then
+        n=1
+        while [ -e "$opath" ]; do
+            opath="$odir/${ofname}_$n.$ofext"
+            ((n++))
+        done
+    fi
+
+    $SUBPROGRAM_PARSE -t "$ofmt" "$ipath" "$opath" || return 1
     return 0
 }
 
