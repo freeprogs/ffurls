@@ -24,6 +24,7 @@ BROVERTYP_2=1
 BROVERTYP_UNKNOWN=undefined
 
 SUBPROGRAM_PARSE=__PROGRAM_NAME__-parse.py
+SUBPROGRAM_UNZIP=__PROGRAM_NAME__-unzip.py
 
 # Print an error message to stderr
 # error(str)
@@ -181,8 +182,65 @@ extract_tabs_from_unzipped()
 #     output_fileext_html)
 extract_tabs_from_zipped()
 {
-    echo zipped $@
-    return 0;
+    local format=$1
+    local browser_dir=$2
+    local output_dir=$3
+    local output_filename=$4
+    local output_fileext_text=$5
+    local output_fileext_org=$6
+    local output_fileext_html=$7
+
+    local zpath
+    local idir
+    local ipath
+    local ofmt
+    local odir
+    local ofname
+    local ofext
+    local opath
+    local n
+
+    zpath=$(\
+        ls "$browser_dir"/firefox/*.default/sessionstore-backups/recovery.jsonlz4 \
+            2>/dev/null)
+
+    idir=$(\
+        ls -d "$browser_dir"/firefox/*.default/sessionstore-backups \
+            2>/dev/null)
+
+    ipath="$idir/recovery.js.ffurls"
+
+    ofmt=$format
+    odir=$output_dir
+    ofname=$output_filename
+
+    case $format in
+    text)
+        ofext=$output_fileext_text
+        ;;
+    org)
+        ofext=$output_fileext_org
+        ;;
+    html)
+        ofext=$output_fileext_html
+        ;;
+    esac
+
+    opath="$odir/$ofname.$ofext"
+
+    if [ -e "$opath" ]; then
+        n=1
+        while [ -e "$opath" ]; do
+            opath="$odir/${ofname}_$n.$ofext"
+            ((n++))
+        done
+    fi
+
+    cp "$zpath" "$ipath" || return 1
+    $SUBPROGRAM_UNZIP "$zpath" "$ipath" || return 1
+    $SUBPROGRAM_PARSE -t "$ofmt" "$ipath" "$opath" || { rm -f "$ipath"; return 1; }
+    rm -f "$ipath" || return 1
+    return 0
 }
 
 # Detect browser version type to determine strategy for parsing internal files
