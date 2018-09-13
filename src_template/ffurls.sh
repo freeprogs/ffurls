@@ -109,7 +109,11 @@ get_config_ofname()
 # get_config_ofext_text(file)
 get_config_ofext_text()
 {
-    echo "txt"
+    local file=$1
+    local out
+
+    out=$(cat "$file" | get_config_value "output_file_extension_text")
+    echo "$out"
 }
 
 # Get from config file output file extension for org format
