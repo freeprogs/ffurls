@@ -57,6 +57,19 @@ print_help()
     } >&2
 }
 
+# Get value for the given keyname of the config text
+# Config text format:
+#   keyname1=value1\n
+#   keyname2=value2\n
+#   keynameN=valueN\n
+# get_config_value(keyname)
+get_config_value()
+{
+    local keyname=$1
+
+    sed -n '/^'"$keyname="'/ { s/'"$keyname"'=//p; q; }'
+}
+
 # Get from config file browser directory
 # get_config_browser_dir(file)
 get_config_browser_dir()
