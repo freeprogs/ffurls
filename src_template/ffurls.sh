@@ -74,8 +74,12 @@ get_config_value()
 # get_config_browser_dir(file)
 get_config_browser_dir()
 {
-    local s="~/.mozilla"
-    echo "${s//\~/$HOME}"
+    local file=$1
+    local out
+
+    out=$(cat "$file" | get_config_value "browser_directory")
+    out="${out//\~/$HOME}"
+    echo "$out"
 }
 
 # Get from config file output directory
