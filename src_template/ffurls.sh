@@ -334,7 +334,7 @@ main()
     fi
     usage
 
-    config_file="/usr/local/etc/__PROGRAM_NAME__.sh"
+    config_file="/usr/local/etc/__PROGRAM_NAME__.conf"
     browser_dir=$(get_config_browser_dir "$config_file")
     output_dir=$(get_config_output_dir "$config_file")
     ofname=$(get_config_ofname "$config_file")
@@ -342,6 +342,7 @@ main()
     ofext_org=$(get_config_ofext_org "$config_file")
     ofext_html=$(get_config_ofext_html "$config_file")
     default_ofmt=$(get_config_default_ofmt "$config_file")
+
     if [ $# -eq 0 ]; then
         extract_tabs \
             "$default_ofmt" \
