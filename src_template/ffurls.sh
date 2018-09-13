@@ -98,7 +98,11 @@ get_config_output_dir()
 # get_config_ofname(file)
 get_config_ofname()
 {
-    echo "firefox"
+    local file=$1
+    local out
+
+    out=$(cat "$file" | get_config_value "output_filename")
+    echo "$out"
 }
 
 # Get from config file output file extension for text format
