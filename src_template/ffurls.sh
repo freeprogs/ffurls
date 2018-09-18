@@ -28,6 +28,10 @@ SUBPROGRAM_UNZIP=__PROGRAM_NAME__"_unzip.py"
 
 # Print an error message to stderr
 # error(str)
+# args:
+#   str - string to output
+# return:
+#   none
 error()
 {
     echo "error: $PROGNAME: $1" >&2
@@ -35,6 +39,10 @@ error()
 
 # Print short help about this script
 # usage()
+# args:
+#   none
+# return:
+#   none
 usage()
 {
     echo "Try \`$PROGNAME --help' for more information." >&2
@@ -42,6 +50,10 @@ usage()
 
 # Print full help about this script
 # print_help()
+# args:
+#   none
+# return:
+#   none
 print_help()
 {
     {
@@ -63,6 +75,10 @@ print_help()
 #   keyname2=value2\n
 #   keynameN=valueN\n
 # get_config_value(keyname)
+# args:
+#   keyname - the name of the left part of key=value pair
+# return:
+#   string with value
 get_config_value()
 {
     local keyname=$1
@@ -72,6 +88,10 @@ get_config_value()
 
 # Get from config file browser directory
 # get_config_browser_dir(file)
+# args:
+#   file - path to config file
+# return:
+#   string with path to browser dir
 get_config_browser_dir()
 {
     local file=$1
@@ -84,6 +104,10 @@ get_config_browser_dir()
 
 # Get from config file output directory
 # get_config_output_dir(file)
+# args:
+#   file - path to config file
+# return:
+#   string with path to output dir
 get_config_output_dir()
 {
     local file=$1
@@ -96,6 +120,9 @@ get_config_output_dir()
 
 # Get from config file output file name
 # get_config_ofname(file)
+#   file - path to config file
+# return:
+#   string with name of output file
 get_config_ofname()
 {
     local file=$1
@@ -107,6 +134,9 @@ get_config_ofname()
 
 # Get from config file output file extension for text format
 # get_config_ofext_text(file)
+#   file - path to config file
+# return:
+#   string with extension for text format
 get_config_ofext_text()
 {
     local file=$1
@@ -118,6 +148,9 @@ get_config_ofext_text()
 
 # Get from config file output file extension for org format
 # get_config_ofext_org(file)
+#   file - path to config file
+# return:
+#   string with extension for org format
 get_config_ofext_org()
 {
     local file=$1
@@ -129,6 +162,9 @@ get_config_ofext_org()
 
 # Get from config file output file extension for html format
 # get_config_ofext_html(file)
+#   file - path to config file
+# return:
+#   string with extension for html format
 get_config_ofext_html()
 {
     local file=$1
@@ -140,6 +176,9 @@ get_config_ofext_html()
 
 # Get from config file default output format
 # get_config_default_ofmt(file)
+#   file - path to config file
+# return:
+#   string with default output format
 get_config_default_ofmt()
 {
     local file=$1
@@ -159,6 +198,17 @@ get_config_default_ofmt()
 #     output_fileext_text,
 #     output_fileext_org,
 #     output_fileext_html)
+# args:
+#   format - output file format (text, org, html)
+#   browser_dir - directory where to search Firefox tabs data
+#   output_dir - directory for output file
+#   output_filename - output file name
+#   output_fileext_text - output file extension for text format
+#   output_fileext_org - output file extension for org format
+#   output_fileext_html - output file extension for html format
+# return:
+#   0 if success
+#   1 if fail
 extract_tabs_from_unzipped()
 {
     local format=$1
@@ -221,6 +271,17 @@ extract_tabs_from_unzipped()
 #     output_fileext_text,
 #     output_fileext_org,
 #     output_fileext_html)
+# args:
+#   format - output file format (text, org, html)
+#   browser_dir - directory where to search Firefox tabs data
+#   output_dir - directory for output file
+#   output_filename - output file name
+#   output_fileext_text - output file extension for text format
+#   output_fileext_org - output file extension for org format
+#   output_fileext_html - output file extension for html format
+# return:
+#   0 if success
+#   1 if fail
 extract_tabs_from_zipped()
 {
     local format=$1
@@ -286,6 +347,10 @@ extract_tabs_from_zipped()
 
 # Detect browser version type to determine strategy for parsing internal files
 # detect_browser_version_type(dir)
+# args:
+#   dir - directory where to search browser files
+# return:
+#   string with browser type (BROVERTYP_1, BROVERTYP_2, BROVERTYP_UNKNOWN)
 detect_browser_version_type()
 {
     local dir=$1
@@ -315,6 +380,17 @@ detect_browser_version_type()
 #     output_fileext_text,
 #     output_fileext_org,
 #     output_fileext_html)
+# args:
+#   format - output file format (text, org, html)
+#   browser_dir - directory where to search Firefox tabs data
+#   output_dir - directory for output file
+#   output_filename - output file name
+#   output_fileext_text - output file extension for text format
+#   output_fileext_org - output file extension for org format
+#   output_fileext_html - output file extension for html format
+# return:
+#   0 if success
+#   1 if fail
 extract_tabs()
 {
     local format=$1
@@ -356,8 +432,15 @@ extract_tabs()
     return 0
 }
 
-# Run main script operations
+# Run main script operations.
+# Read config file, read cmdline option and save Firefox tabs
+# according to these settings
 # main([cmdarg])
+# args:
+#   cmdarg - command line argument (--text, --org, --html, --help)
+# return:
+#   0 if success
+#   1 if fail
 main()
 {
     local config_file
