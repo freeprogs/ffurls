@@ -3,7 +3,7 @@
 #+TODO: BUG(b!) | FIXED(f) REJECT(r)
 #+PRIORITIES: A F C
 #+TAGS: current(c) testing(t)
-#+CONSTANTS: last_issue_id=26
+#+CONSTANTS: last_issue_id=27
 
 * Задачи
   :PROPERTIES:
@@ -103,3 +103,13 @@
    хранится в неизменном месте.
    Рассмотреть возможность удаления программы с учётом нового пути
    установки программы.
+
+** TASK Перенести установку из local в usr
+   :PROPERTIES:
+   :issue_id: 27
+   :issue_type: task
+   :END:
+   [2018-09-19 Ср]
+
+   - Скрипты ставятся в /usr/bin
+   - Конфиг-файла ставится в /etc
