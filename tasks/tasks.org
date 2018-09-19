@@ -3,7 +3,7 @@
 #+TODO: BUG(b!) | FIXED(f) REJECT(r)
 #+PRIORITIES: A F C
 #+TAGS: current(c) testing(t)
-#+CONSTANTS: last_issue_id=23
+#+CONSTANTS: last_issue_id=24
 
 * Задачи
   :PROPERTIES:
@@ -41,6 +41,17 @@
    :issue_id: 10
    :issue_type: task
    :END:
+
+** TASK Сделать пользовательский конфиг-файл
+   :PROPERTIES:
+   :issue_id: 24
+   :issue_type: task
+   :END:
+   [2018-09-19 Ср]
+
+   Общий конфиг-файл используется всеми пользователями системы, тогда
+   как пользовательский конфиг-файл перекрывает записи из общего
+   конфиг-файла.
 
 
 * Баги
