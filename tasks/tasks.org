@@ -11,7 +11,8 @@
   :ARCHIVE:  tasks_archive.org::* Архив задач
   :END:
 
-** TASK Автоматизировать поиск файла источника
+** DONE Автоматизировать поиск файла источника
+   CLOSED: [2018-09-19 Ср 17:21]
    :PROPERTIES:
    :issue_id: 1
    :issue_type: task
