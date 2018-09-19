@@ -7,9 +7,6 @@ It takes Firefox file with actual configuration of opened tabs and
 windows, finds titles and urls there and saves these pairs to a file
 in a selected format.
 
-Some file formats are mutable, some not and some are both mutable and
-immutable.
-
 Available formats:
 
   text -- a text file
@@ -20,7 +17,6 @@ Available formats:
 
    org -- org-file for Emacs
           it is handy for read, also it is handy for editions
-          (recommended)
 
 ========================================================================
 
@@ -31,8 +27,7 @@ README
  2. Building
  3. Installation
    3.1 General installation
-   3.2 Installation to custom directories
-   3.3 How to uninstall the program
+   3.2 How to uninstall the program
  4. Operating
  5. Files
  6. Copyright
@@ -46,17 +41,24 @@ README
 
 0. REQUIREMENTS
 
-This program has tested in Linux Fedora 20 and Mozilla Firefox 38.0.5.
+This program has tested on environment configuration
+1)
+  Linux Fedora 20
+  Python 3.3.2
+  Mozilla Firefox 38.0.5
+  GNU bash 4.4.12
+2)
+  Linux Fedora 26
+  Python 3.6.5
+  Mozilla Firefox 60.0.0
+  GNU bash 4.4.12
 
 It may work with lower versions of Firefox and may not work with
-higher versions of Firefox due uncontrolled changes made in the
+higher versions of Firefox due uncontrolled changes were made in the
 browser.
 
 For other systems (macOS, Windows) this program wasn't tested and may
 work, but it is not guaranteed.
-
-Also to install program you should have folder `Downloads' in your
-home directory because shell scripts save output files there.
 
 
 1. CONFIGURATION
@@ -77,14 +79,8 @@ At first, you should build the program, run:
 
 It will create the `build' directory with files and directories ready
 for installation.
-
-You can take these files directly, as they are ready for using.
-
-Also this file and another documentation can hold templates in the
-form `__NAME_OF_TEMPLATE__' so it is not clear what is this. But after
-building they are replaced and you can read everything. So if you
-don't understand any info because of them, look into the building
-directory, it will be there clear.
+You can read these files since they don't contain m4-template strings
+anymore and ready for installation and work.
 
 
 3. INSTALLATION
@@ -95,32 +91,14 @@ When the program has built, you can install it, run:
 
    `sudo make install'
 
-By default the python script will be installed to the `/usr/local/bin'
+By default the shell script will be installed to the `__DNAME_SHBIN__'
 directory.
-By default shell scripts will be installed to the `/usr/local/bin'
+By default the python script will be installed to the `__DNAME_PYBIN__'
 directory.
-
-3.2 Installation to custom directories
-
-You can also replace build and install directories from the command
-line.
-
-To change a default directory to a custom directory, just run:
-
-  `make "build_dir=mydir"'  (default `build')
-
-  `make "docs_dir=mydir"'  (default `docs')
-
-  `sudo make "home_dir=mydir" install'  (default $HOME)
-
-  `sudo make "python_script_dir=mydir" install'  (default `/usr/local/bin')
-
-  `sudo make "shell_scripts_dir=mydir" install'  (default `/usr/local/bin')
-
-  `sudo make "system_docs_dir=mydir" install'  (default `/usr/share/doc')
-
-If you have built a custom directory, then while installation in some
-cases you should pass it again because make doesn't remember it.
+By default the config file will be installed to the `__DNAME_CONF__'
+directory.
+By default the documentation will be installed to the `__DNAME_DOC__/__PROGRAM_NAME__'
+directory.
 
 3.3 How to uninstall the program
 
@@ -128,73 +106,49 @@ To uninstall the program run command:
 
   `sudo make uninstall'
 
-If the program was installed to custom directories, you should pass
-these directories through variables to `make'.
-
-Note: After uninstall all users in the system can't use the program
-because it has deleted.
-
 
 4. OPERATING
 
 Most information how to operate with the program you can read in the
-help of __PROGRAM_NAME__.py. Just run:
+help of __FNAME_GENERAL_SH__. Just run:
 
-  `__PROGRAM_NAME__.py -h'
+  `__FNAME_GENERAL_SH__ --help'
 
-Some shell scripts are already operating with the main program. By
-default they are installed in `/usr/local/bin' and have prefix
-"__PROGRAM_NAME__" in their names.
+Low level scripts __FNAME_PARSE_PY__ and __FNAME_UNZIP_PY__ also
+contains help information. Just run:
 
-So, you can run:
+  `__FNAME_PARSE_PY__ -h'
 
-  `__PROGRAM_NAME__.sh'
+  `__FNAME_UNZIP_PY__ -h'
 
-to save Firefox urls in a default format (org-file).
+In usual case the program takes its configuration from __FNAME_CONF__
+and you just run:
 
-Also you can run:
+  `__FNAME_GENERAL_SH__'
 
-  `__PROGRAM_NAME__-text.sh' or `__PROGRAM_NAME__-html.sh' or `__PROGRAM_NAME__-org.sh'
-
-to select output file format - text-file, html-file or org-file.
-
-Usually, you will save Firefox urls through `__PROGRAM_NAME__.sh' since it was
-made special for that. But in some cases you will want simple
-text-file or read-only html-file or forced org-file or even Firefox
-will change the path to its files after update (as it happens
-sometimes), so you will need to use the main program to set the new
-Firefox data path. If this happens, make your own shell script, using
-contents of existing scripts as an example.
+to save Firefox urls to default directory, filename, file extension
+and format.
 
 
 5. FILES
 
-README            This file.
+After installation you have files:
 
-README.md         The file with project description in markdown.
-                  Needed for automatic description generated on web.
+__DNAME_DOC__/__PROGRAM_NAME__
+  documentation (help, versions history and license)
 
-LICENSE           The text of license.
+__FNAME_GENERAL_SH__
+  The main program which parses Firefox file with tabs and saves
+  output to the output file.
 
-__PROGRAM_NAME__.py         The main program which parses Firefox file and saves
-                  output.
+__FNAME_CONF__
+  Configurations file for all system users.
 
-__PROGRAM_NAME__.sh         The shell script for run default shell script
-                  (`__PROGRAM_NAME__-org.sh').
+__FNAME_PARSE_PY__
+  Low level script for getting tabs from json.
 
-These shell scripts will be renamed after installation for
-convenient using:
-
-__PROGRAM_NAME__-text.sh    The shell script for run `__PROGRAM_NAME__.py' and save to text
-                  output.
-
-__PROGRAM_NAME__-html.sh    The shell script for run `__PROGRAM_NAME__.py' and save to html
-                  output.
-
-__PROGRAM_NAME__-org.sh     The shell script for run `__PROGRAM_NAME__.py' and save to org
-                  output.
-
-Other files exist for building the program.
+__FNAME_UNZIP_PY__
+  Low level script for getting json from compressed json.
 
 
 6. COPYRIGHT
@@ -204,8 +158,8 @@ __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
 
 7. LICENSING
 
-You can read license in file LICENSE in the distribution or program
-documenatation (`/usr/share/doc/__PROGRAM_NAME__').
+You can read full license text in file LICENSE in the distribution or
+program documenatation (`__DNAME_DOC__/__PROGRAM_NAME__').
 
 GNU GPLv3
 
@@ -237,7 +191,7 @@ __PROGRAM_SOURCES__
 
 9. BUGS
 
-To write about bug and features you can go to the website or write an
+To write about bugs and features you can go to the website or write an
 email to:
 
   __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
@@ -251,24 +205,26 @@ or use the issue system on:
 
 1)
 Firefox can change its format (I caught such a case one time), so
-the program can lose the input file. If so, edit shell scripts or run
-`__PROGRAM_NAME__.py' manually with the new input file.
+the program can lose the input file.
+If so, you can take Firefox file with json manually and run
+`__FNAME_PARSE_PY__' manually to get the output file.
 
 2)
 In some cases Firefox behaves like it has open tabs, but don't make
 the file with them, or it makes this file, but there are empty links
-or not all links. In such a case you should wait some time (a minute)
-until Firefox creates it normally. It is a recovery file, therefore it
-may work with a delay.
+or not all links. In such a case you should wait some time (over ten
+seconds) until Firefox creates it normally. It is a recovery file,
+therefore it may work with a delay.
 
 Same thing may happen when you try to save tabs when Firefox is not
 running. It may delete this file or the file contains wrong links. In
-this case just open links in Firefox and wait a minute until it will
-be ready and then save.
+this case just open links in Firefox and wait half a minute until it
+will be ready and then save.
 
 3)
 If the program prints a weird message that it can't save the output
-file, then check existence of the `~/Downloads' directory.
+file, then check existence of the output directory and permissions for
+creating output file there.
 
 
 11. ACKNOWLEDGMENTS

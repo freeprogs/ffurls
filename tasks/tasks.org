@@ -1,0 +1,72 @@
+#+STARTUP: content logdone hideblocks
+#+TODO: TASK(t!) | DONE(d) CANCEL(c)
+#+TODO: BUG(b!) | FIXED(f) REJECT(r)
+#+PRIORITIES: A F C
+#+TAGS: current(c) testing(t)
+#+CONSTANTS: last_issue_id=22
+
+* Задачи
+  :PROPERTIES:
+  :COLUMNS:  %3issue_id(ID) %4issue_type(TYPE) %TODO %40ITEM %SCHEDULED %DEADLINE %1PRIORITY
+  :ARCHIVE:  tasks_archive.org::* Архив задач
+  :END:
+
+** TASK Автоматизировать поиск файла источника
+   :PROPERTIES:
+   :issue_id: 1
+   :issue_type: task
+   :END:
+
+** TASK Добавить опцию добавления в файл вывода
+   :PROPERTIES:
+   :issue_id: 2
+   :issue_type: task
+   :END:
+
+** TASK Добавить в скрипты параметризацию имён файлов вывода
+   :PROPERTIES:
+   :issue_id: 9
+   :issue_type: task
+   :END:
+
+** TASK Сделать юнит-тесты для функций
+   :PROPERTIES:
+   :issue_id: 10
+   :issue_type: task
+   :END:
+
+** TASK Добавить скрипт распаковки recovery.js
+   :PROPERTIES:
+   :issue_id: 22
+   :issue_type: task
+   :END:
+   [2018-09-07 Пт]
+
+   В новых версиях Firefox файл recovery.js сжат внутренним форматом,
+   поэтому требуется сначала его распаковать, а потом обрабатывать,
+   как прежде.
+
+   Так как нужно сохранять и старый подход для старой версии Firefox,
+   распаковка будет добавлена как опция. При этом решение о
+   предварительной распаковке файла должно приниматься внешними
+   скриптами на shell, использующими базовые скрипты на python.
+
+
+* Баги
+  :PROPERTIES:
+  :COLUMNS:  %3issue_id(ID) %4issue_type(TYPE) %TODO %40ITEM %SCHEDULED %DEADLINE %1PRIORITY
+  :ARCHIVE:  tasks_archive.org::* Архив багов
+  :END:
+
+
+* Окружение проекта
+  :PROPERTIES:
+  :COLUMNS:  %3issue_id(ID) %4issue_type(TYPE) %TODO %40ITEM %SCHEDULED %DEADLINE %1PRIORITY
+  :ARCHIVE:  tasks_archive.org::* Архив окружения
+  :END:
+
+** TASK Сделать man страницу
+   :PROPERTIES:
+   :issue_id: 21
+   :issue_type: task
+   :END:

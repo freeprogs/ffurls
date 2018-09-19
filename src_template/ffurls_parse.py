@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# __PROGRAM_NAME__ __PROGRAM_VERSION__
+# This script is a part of __PROGRAM_NAME__ __PROGRAM_VERSION__
 #
 # __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
 #
@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Saves tabs opened in Firefox to a file in some format.
+"""Save tabs opened in Firefox to a file in some format.
 
 It takes Firefox file with actual configuration of opened tabs and
 windows, finds titles and urls there and saves these pairs to a file
