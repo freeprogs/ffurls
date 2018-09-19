@@ -35,7 +35,8 @@
    :issue_type: task
    :END:
 
-** TASK Добавить скрипт распаковки recovery.js
+** DONE Добавить скрипт распаковки recovery.js
+   CLOSED: [2018-09-19 Ср 17:16]
    :PROPERTIES:
    :issue_id: 22
    :issue_type: task
