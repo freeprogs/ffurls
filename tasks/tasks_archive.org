@@ -101,6 +101,17 @@
    предварительной распаковке файла должно приниматься внешними
    скриптами на shell, использующими базовые скрипты на python.
 
+** DONE Автоматизировать поиск файла источника
+   CLOSED: [2018-09-19 Ср 17:21]
+   :PROPERTIES:
+   :issue_id: 1
+   :issue_type: task
+   :ARCHIVE_TIME: 2018-09-19 Ср 17:22
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Задачи
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
 
 * Архив багов
 
