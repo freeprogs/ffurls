@@ -23,8 +23,8 @@ BROVERTYP_1=0
 BROVERTYP_2=1
 BROVERTYP_UNKNOWN=undefined
 
-SUBPROGRAM_PARSE=__PROGRAM_NAME__"_parse.py"
-SUBPROGRAM_UNZIP=__PROGRAM_NAME__"_unzip.py"
+SUBPROGRAM_PARSE=__FNAME_PARSE_PY__
+SUBPROGRAM_UNZIP=__FNAME_UNZIP_PY__
 
 # Print an error message to stderr
 # error(str)
@@ -310,7 +310,7 @@ extract_tabs_from_zipped()
         ls -d "$browser_dir"/firefox/*.default/sessionstore-backups \
             2>/dev/null)
 
-    ipath="$idir/recovery.js.ffurls"
+    ipath="$idir/recovery.js.__PROGRAM_NAME__"
 
     ofmt=$format
     odir=$output_dir
@@ -458,7 +458,7 @@ main()
     fi
     usage
 
-    config_file="/usr/local/etc/__PROGRAM_NAME__.conf"
+    config_file="__DNAME_CONF__/__FNAME_CONF__"
     browser_dir=$(get_config_browser_dir "$config_file")
     output_dir=$(get_config_output_dir "$config_file")
     ofname=$(get_config_ofname "$config_file")
