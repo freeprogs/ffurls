@@ -7,8 +7,20 @@ Saves tabs opened in Firefox to a file in some format.
 
 ### Requirements
 
-This program has tested in Linux Fedora 20 with Python 3.3.2 and
-Mozilla Firefox 38.0.5 .
+
+This program has tested on environment configuration
+```
+1)
+  Linux Fedora 20
+  Python 3.3.2
+  Mozilla Firefox 38.0.5
+  GNU bash 4.4.12
+2)
+  Linux Fedora 26
+  Python 3.6.5
+  Mozilla Firefox 60.0.0
+  GNU bash 4.4.12
+```
 
 ### Building
 
@@ -35,10 +47,10 @@ To uninstall run:
 $ sudo make uninstall
 ```
 
----
+### Run
 
-Note:
-Don't take files from this project before their building because they
-are just templates for the ending program and its documentation. These
-files may not work because template strings may brake the code as they
-may be placed in the middle of code, not only in comments.
+```sh
+$ ffurls.sh --help
+```
+
+---

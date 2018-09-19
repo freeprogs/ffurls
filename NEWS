@@ -12,6 +12,15 @@ Changed
 
 Fixed
 
+[1.1.0] - 2018-09-19
+
+Added
+- Parsing for Firefox 60
+  For this browser version at first it decompresses file before parsing.
+
+Changed
+- Four shell-scripts squashed to one shell-script with parameters.
+
 [1.0.3hf1] - 2017-03-23
 
 Changed
