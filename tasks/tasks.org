@@ -3,7 +3,7 @@
 #+TODO: BUG(b!) | FIXED(f) REJECT(r)
 #+PRIORITIES: A F C
 #+TAGS: current(c) testing(t)
-#+CONSTANTS: last_issue_id=22
+#+CONSTANTS: last_issue_id=23
 
 * Задачи
   :PROPERTIES:
@@ -61,3 +61,10 @@
    :issue_id: 21
    :issue_type: task
    :END:
+
+** TASK Описать конфиг-файл в документации
+   :PROPERTIES:
+   :issue_id: 23
+   :issue_type: task
+   :END:
+   [2018-09-19 Ср]
