@@ -17,7 +17,7 @@ This program has tested on environment configuration
   GNU bash 4.4.12
 2)
   Linux Fedora 26
-  Python 3.6.5
+  Python 3.6.5 with package lz 2.1.0
   Mozilla Firefox 60.0.0
   GNU bash 4.4.12
 ```
