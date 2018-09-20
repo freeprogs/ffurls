@@ -86,6 +86,188 @@ get_config_value()
     sed -n '/^'"$keyname="'/ { s/'"$keyname"'=//p; q; }'
 }
 
+# Get from several config files browser directory;
+# For several files next file data replaces previous file data
+# get_multifiles_config_browser_dir(file1[, file2[, ... fileN]])
+# args:
+#   file1 - path to first config file
+#   file2 - path to second config file
+#   ...
+#   fileN - path to Nth config file
+# return:
+#   string with path to browser dir
+get_multifiles_config_browser_dir()
+{
+    local fname
+    local str
+    local out
+
+    for fname in "$@"; do
+        fname="${fname//\~/$HOME}"
+        [ -f "$fname" ] && {
+            str=$(get_config_browser_dir "$fname")
+            [ "$str" ] && { out="$str"; }
+        }
+    done
+    echo "$out"
+}
+
+# Get from several config files output directory;
+# For several files next file data replaces previous file data
+# get_multifiles_config_output_dir(file1[, file2[, ... fileN]])
+# args:
+#   file1 - path to first config file
+#   file2 - path to second config file
+#   ...
+#   fileN - path to Nth config file
+# return:
+#   string with path to output dir
+get_multifiles_config_output_dir()
+{
+    local fname
+    local str
+    local out
+
+    for fname in "$@"; do
+        fname="${fname//\~/$HOME}"
+        [ -f "$fname" ] && {
+            str=$(get_config_output_dir "$fname")
+            [ "$str" ] && { out="$str"; }
+        }
+    done
+    echo "$out"
+}
+
+# Get from several config files output file name;
+# For several files next file data replaces previous file data
+# get_multifiles_config_ofname(file1[, file2[... , fileN]])
+# args:
+#   file1 - path to first config file
+#   file2 - path to second config file
+#   ...
+#   fileN - path to Nth config file
+# return:
+#   string with name of output file
+get_multifiles_config_ofname()
+{
+    local fname
+    local str
+    local out
+
+    for fname in "$@"; do
+        fname="${fname//\~/$HOME}"
+        [ -f "$fname" ] && {
+            str=$(get_config_ofname "$fname")
+            [ "$str" ] && { out="$str"; }
+        }
+    done
+    echo "$out"
+}
+
+# Get from several config files output file extension for text format;
+# For several files next file data replaces previous file data
+# get_multifiles_config_ofext_text(file1[, file2[, ... fileN]])
+# args:
+#   file1 - path to first config file
+#   file2 - path to second config file
+#   ...
+#   fileN - path to Nth config file
+# return:
+#   string with extension for text format
+get_multifiles_config_ofext_text()
+{
+    local fname
+    local str
+    local out
+
+    for fname in "$@"; do
+        fname="${fname//\~/$HOME}"
+        [ -f "$fname" ] && {
+            str=$(get_config_ofext_text "$fname")
+            [ "$str" ] && { out="$str"; }
+        }
+    done
+    echo "$out"
+}
+
+# Get from several config files output file extension for org format;
+# For several files next file data replaces previous file data
+# get_multifiles_config_ofext_org(file1[, file2[, ... fileN]])
+# args:
+#   file1 - path to first config file
+#   file2 - path to second config file
+#   ...
+#   fileN - path to Nth config file
+# return:
+#   string with extension for org format
+get_multifiles_config_ofext_org()
+{
+    local fname
+    local str
+    local out
+
+    for fname in "$@"; do
+        fname="${fname//\~/$HOME}"
+        [ -f "$fname" ] && {
+            str=$(get_config_ofext_org "$fname")
+            [ "$str" ] && { out="$str"; }
+        }
+    done
+    echo "$out"
+}
+
+# Get from several config files output file extension for html format;
+# For several files next file data replaces previous file data
+# get_multifiles_config_ofext_html(file1[, file2[, ... fileN]])
+# args:
+#   file1 - path to first config file
+#   file2 - path to second config file
+#   ...
+#   fileN - path to Nth config file
+# return:
+#   string with extension for html format
+get_multifiles_config_ofext_html()
+{
+    local fname
+    local str
+    local out
+
+    for fname in "$@"; do
+        fname="${fname//\~/$HOME}"
+        [ -f "$fname" ] && {
+            str=$(get_config_ofext_html "$fname")
+            [ "$str" ] && { out="$str"; }
+        }
+    done
+    echo "$out"
+}
+
+# Get from several config files default output format;
+# For several files next file data replaces previous file data
+# get_multifiles_config_default_ofmt(file1[, file2[, ... fileN]])
+# args:
+#   file1 - path to first config file
+#   file2 - path to second config file
+#   ...
+#   fileN - path to Nth config file
+# return:
+#   string with default output format
+get_multifiles_config_default_ofmt()
+{
+    local fname
+    local str
+    local out
+
+    for fname in "$@"; do
+        fname="${fname//\~/$HOME}"
+        [ -f "$fname" ] && {
+            str=$(get_config_default_ofmt "$fname")
+            [ "$str" ] && { out="$str"; }
+        }
+    done
+    echo "$out"
+}
+
 # Get from config file browser directory
 # get_config_browser_dir(file)
 # args:
@@ -448,7 +630,8 @@ extract_tabs()
 #   1 if fail
 main()
 {
-    local config_file
+    local general_user_config_file
+    local current_user_config_file
     local browser_dir
     local output_dir
     local ofname
@@ -463,14 +646,22 @@ main()
     fi
     usage
 
-    config_file="__DNAME_CONF__/__FNAME_CONF__"
-    browser_dir=$(get_config_browser_dir "$config_file")
-    output_dir=$(get_config_output_dir "$config_file")
-    ofname=$(get_config_ofname "$config_file")
-    ofext_text=$(get_config_ofext_text "$config_file")
-    ofext_org=$(get_config_ofext_org "$config_file")
-    ofext_html=$(get_config_ofext_html "$config_file")
-    default_ofmt=$(get_config_default_ofmt "$config_file")
+    general_user_config_file="__DNAME_ETC_CONFIG__/__FNAME_ETC_CONFIG__"
+    current_user_config_file="__DNAME_HOME_CONFIG__/__FNAME_HOME_CONFIG__"
+    browser_dir=$(get_multifiles_config_browser_dir \
+        "$general_user_config_file" "$current_user_config_file")
+    output_dir=$(get_multifiles_config_output_dir \
+        "$general_user_config_file" "$current_user_config_file")
+    ofname=$(get_multifiles_config_ofname \
+        "$general_user_config_file" "$current_user_config_file")
+    ofext_text=$(get_multifiles_config_ofext_text \
+        "$general_user_config_file" "$current_user_config_file")
+    ofext_org=$(get_multifiles_config_ofext_org \
+        "$general_user_config_file" "$current_user_config_file")
+    ofext_html=$(get_multifiles_config_ofext_html \
+        "$general_user_config_file" "$current_user_config_file")
+    default_ofmt=$(get_multifiles_config_default_ofmt \
+        "$general_user_config_file" "$current_user_config_file")
 
     if [ $# -eq 0 ]; then
         extract_tabs \
