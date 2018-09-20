@@ -95,7 +95,7 @@ By default the shell script will be installed to the `__DNAME_SHBIN__'
 directory.
 By default the python script will be installed to the `__DNAME_PYBIN__'
 directory.
-By default the config file will be installed to the `__DNAME_CONF__'
+By default the config file will be installed to the `__DNAME_ETC_CONFIG__'
 directory.
 By default the documentation will be installed to the `__DNAME_DOC__/__PROGRAM_NAME__'
 directory.
@@ -121,7 +121,7 @@ contains help information. Just run:
 
   `__FNAME_UNZIP_PY__ -h'
 
-In usual case the program takes its configuration from __FNAME_CONF__
+In usual case the program takes its configuration from __FNAME_ETC_CONFIG__
 and you just run:
 
   `__FNAME_GENERAL_SH__'
@@ -141,7 +141,7 @@ __FNAME_GENERAL_SH__
   The main program which parses Firefox file with tabs and saves
   output to the output file.
 
-__FNAME_CONF__
+__FNAME_ETC_CONFIG__
   Configurations file for all system users.
 
 __FNAME_PARSE_PY__
