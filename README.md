@@ -50,7 +50,7 @@ $ sudo make uninstall
 ### Run
 
 ```sh
-$ ffurls.sh --help
+$ ffurls.sh
 ```
 
 ---
