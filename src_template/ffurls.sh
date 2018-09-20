@@ -120,6 +120,7 @@ get_config_output_dir()
 
 # Get from config file output file name
 # get_config_ofname(file)
+# args:
 #   file - path to config file
 # return:
 #   string with name of output file
@@ -134,6 +135,7 @@ get_config_ofname()
 
 # Get from config file output file extension for text format
 # get_config_ofext_text(file)
+# args:
 #   file - path to config file
 # return:
 #   string with extension for text format
@@ -148,6 +150,7 @@ get_config_ofext_text()
 
 # Get from config file output file extension for org format
 # get_config_ofext_org(file)
+# args:
 #   file - path to config file
 # return:
 #   string with extension for org format
@@ -162,6 +165,7 @@ get_config_ofext_org()
 
 # Get from config file output file extension for html format
 # get_config_ofext_html(file)
+# args:
 #   file - path to config file
 # return:
 #   string with extension for html format
@@ -176,6 +180,7 @@ get_config_ofext_html()
 
 # Get from config file default output format
 # get_config_default_ofmt(file)
+# args:
 #   file - path to config file
 # return:
 #   string with default output format
