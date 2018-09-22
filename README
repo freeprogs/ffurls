@@ -29,6 +29,8 @@ README
    3.1 General installation
    3.2 How to uninstall the program
  4. Operating
+   4.1 Set config file
+   4.2 Run program
  5. Files
  6. Copyright
  7. Licensing
@@ -109,6 +111,41 @@ To uninstall the program run command:
 
 4. OPERATING
 
+4.1 Set config file
+
+There are two config-files available in the program.
+The first file `__DNAME_ETC_CONFIG__/__FNAME_ETC_CONFIG__' is general
+file for all users in the operating system.
+
+The second file `__DNAME_HOME_CONFIG__/__FNAME_HOME_CONFIG__' is special
+file for the user, which he can create in his home directory.
+
+The config-file contains commented fields itself (you can view it for
+more information). These fields are:
+
+browser_directory
+output_directory
+output_filename
+output_file_extension_text
+output_file_extension_org
+output_file_extension_html
+default_output_format
+
+The config-file in the user's home directory overrides fields from the
+config-file from the system directory.
+
+So, for example, you can override field for the output directory,
+creating the confi-file in the home directory with one line:
+
+output_directory=/path/to/my/directory
+
+After that the program will save files to the given path only for the
+current user, but for other users the program will save files to the
+path from the system config-file or theirs paths from their
+config-files.
+
+4.2 Run program
+
 Most information how to operate with the program you can read in the
 help of __FNAME_GENERAL_SH__. Just run:
 
@@ -121,7 +158,8 @@ contains help information. Just run:
 
   `__FNAME_UNZIP_PY__ -h'
 
-In usual case the program takes its configuration from __FNAME_ETC_CONFIG__
+In usual case the program takes its configuration from
+`__DNAME_ETC_CONFIG__/__FNAME_ETC_CONFIG__' and `__DNAME_HOME_CONFIG__/__FNAME_HOME_CONFIG__'
 and you just run:
 
   `__FNAME_GENERAL_SH__'
