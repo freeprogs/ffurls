@@ -167,6 +167,10 @@ and you just run:
 to save Firefox urls to default directory, filename, file extension
 and format.
 
+If you run the program several times and program finds the output file
+already in the output directory then the program will increment
+filename numerically.
+
 
 5. FILES
 
