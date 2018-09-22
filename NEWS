@@ -12,6 +12,12 @@ Changed
 
 Fixed
 
+[1.1.1] - 2018-09-22
+
+Added
+- Now, the user can create his own config file in his home directory,
+  overriding setting of the general config file for all users.
+
 [1.1.0] - 2018-09-19
 
 Added

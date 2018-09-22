@@ -5,7 +5,7 @@ m4_define(__PROGRAM_AUTHOR_EMAIL__, <freeprogs.feedback@yandex.ru>)m4_dnl
 m4_define(__PROGRAM_WEBSITE_FIRST__, http://freeprogs.pen.io)m4_dnl
 m4_define(__PROGRAM_WEBSITE_SECOND__, https://freeprogs.github.io/ffurls)m4_dnl
 m4_define(__PROGRAM_SOURCES__, https://github.com/freeprogs/ffurls.git)m4_dnl
-m4_define(__PROGRAM_DAY__, 19)m4_dnl
+m4_define(__PROGRAM_DAY__, 22)m4_dnl
 m4_define(__PROGRAM_MONTH__, Sep)m4_dnl
 m4_define(__PROGRAM_YEAR__, 2018)m4_dnl
 m4_define(__PROGRAM_FIRST_YEAR__, 2016)m4_dnl
