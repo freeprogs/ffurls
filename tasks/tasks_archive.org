@@ -305,3 +305,17 @@
    :ARCHIVE_CATEGORY: tasks
    :ARCHIVE_TODO: DONE
    :END:
+
+** DONE Описать конфиг-файл в документации
+   CLOSED: [2018-09-22 Сб 11:13]
+   :PROPERTIES:
+   :issue_id: 23
+   :issue_type: task
+   :ARCHIVE_TIME: 2018-09-22 Сб 11:14
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+   [2018-09-19 Ср]
+

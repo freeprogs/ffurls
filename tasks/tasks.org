@@ -72,14 +72,6 @@
    :issue_type: task
    :END:
 
-** DONE Описать конфиг-файл в документации
-   CLOSED: [2018-09-22 Сб 11:13]
-   :PROPERTIES:
-   :issue_id: 23
-   :issue_type: task
-   :END:
-   [2018-09-19 Ср]
-
 ** TASK Добавить в configure настройку директории установки
    :PROPERTIES:
    :issue_id: 26
