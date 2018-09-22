@@ -72,7 +72,8 @@
    :issue_type: task
    :END:
 
-** TASK Описать конфиг-файл в документации
+** DONE Описать конфиг-файл в документации
+   CLOSED: [2018-09-22 Сб 11:13]
    :PROPERTIES:
    :issue_id: 23
    :issue_type: task
