@@ -47,6 +47,15 @@ To uninstall run:
 $ sudo make uninstall
 ```
 
+### Set program config
+
+You can use general system config or set your own config to override
+fields:
+
+```sh
+$ vi ~/.ffurls.conf
+```
+
 ### Run
 
 ```sh
