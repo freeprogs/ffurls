@@ -1,1 +1,81 @@
-1
+.\"
+.\" This manpage is a part of __PROGRAM_NAME__ __PROGRAM_VERSION__
+.\"
+.\" __PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
+.\"
+.\" This program is free software: you can redistribute it and/or modify
+.\" it under the terms of the GNU General Public License as published by
+.\" the Free Software Foundation, either version 3 of the License, or
+.\" (at your option) any later version.
+.\"
+.\" This program is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program.  If not, see <http://www.gnu.org/licenses/>.
+.\"
+
+.TH __PROGRAM_NAME__ "1" "__PROGRAM_DATE__" "__PROGRAM_NAME__ __PROGRAM_VERSION__" "User Commands"
+
+.SH NAME
+
+__PROGRAM_NAME__ \- save tabs opened in Firefox to a file in some format.
+
+.SH SYNOPSIS
+
+.B __FNAME_GENERAL_SH__
+[ \fB\-\-text\fR | \fB\-\-org\fR | \fB\-\-html\fR ]
+
+.SH DESCRIPTION
+
+.PP
+Save open browser Firefox tabs (title and url) to the file with a given format.
+
+.PP
+The default format from config file is used.
+
+.SH OPTIONS
+
+.TP
+\fB\-\-text\fR
+save output to text format
+
+.TP
+\fB\-\-org\fR
+save output to org format
+
+.TP
+\fB\-\-html\fR
+save output to html format
+
+.SH AUTHOR
+
+Written by __PROGRAM_AUTHOR__
+
+.SH "REPORTING BUGS"
+
+Report bugs and feature requests to
+.br
+__PROGRAM_WEBSITE_SECOND__
+
+.SH COPYRIGHT
+
+__PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__
+.br
+__PROGRAM_LICENSE__
+
+.SH FILES
+
+.TP
+\fI __DNAME_ETC_CONFIG__/__FNAME_ETC_CONFIG__ \fR
+configuration for all users
+
+.TP
+\fI __DNAME_HOME_CONFIG__/__FNAME_HOME_CONFIG__ \fR
+configuration for current user
+
+.SH "SEE ALSO"
+
+.BR __PROGRAM_NAME__ (5)
