@@ -33,6 +33,25 @@ __PROGRAM_NAME__ \- save tabs opened in Firefox to a file in some format.
 .PP
 Save open browser Firefox tabs (title and url) to the file with a given format.
 
+It takes Firefox file with actual configuration of opened tabs and
+windows, finds titles and urls there and saves these pairs to a file
+in a selected format.
+
+Some file formats are mutable, some not and some are both mutable and
+immutable.
+
+Available formats:
+
+  text -- a text file
+          a raw format, it is handy for automatic processing
+
+  html -- a html page
+          it is handy for read, but it is closed for editions
+
+   org -- org-file for Emacs
+          it is handy for read, also it is handy for editions
+          (recommended)
+
 .PP
 The default format from config file is used.
 
