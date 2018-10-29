@@ -61,11 +61,27 @@ print_help()
         echo ""
         echo "Save open browser Firefox tabs (title and url) to the file with a given format."
         echo ""
-        echo "  noarg   --  The default format from config file is used."
-        echo "  --text  --  Save output to text format."
-        echo "  --org   --  Save output to org format."
-        echo "  --html  --  Save output to html format."
+        echo "  noarg      --  The default format from config file is used."
+        echo "  --text     --  Save output to text format."
+        echo "  --org      --  Save output to org format."
+        echo "  --html     --  Save output to html format."
+        echo "  --version  --  Print program version information."
         echo ""
+    } >&2
+}
+
+# Print program version information
+# print_version()
+# args:
+#   none
+# return:
+#   none
+print_version()
+{
+    {
+        echo "__PROGRAM_NAME__ __PROGRAM_VERSION__"
+        echo "License: __PROGRAM_LICENSE__"
+        echo "__PROGRAM_COPYRIGHT__ __PROGRAM_AUTHOR__ __PROGRAM_AUTHOR_EMAIL__"
     } >&2
 }
 
@@ -642,6 +658,10 @@ main()
 
     if [ $# -ne 0 -a "$1" = "--help" ]; then
         print_help
+        return 1
+    fi
+    if [ $# -ne 0 -a "$1" = "--version" ]; then
+        print_version
         return 1
     fi
     usage
