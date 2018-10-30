@@ -12,6 +12,13 @@ Changed
 
 Fixed
 
+[1.1.2] - 2018-10-30
+
+Changed
+- Program files moved from the user local directory to system
+  directories.
+- Remove suffixes .sh and .py from program files names.
+
 [1.1.1] - 2018-09-22
 
 Added
