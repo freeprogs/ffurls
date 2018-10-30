@@ -66,13 +66,6 @@
   :ARCHIVE:  tasks_archive.org::* Архив окружения
   :END:
 
-** DONE Сделать man страницу
-   CLOSED: [2018-10-30 Вт 11:21]
-   :PROPERTIES:
-   :issue_id: 21
-   :issue_type: task
-   :END:
-
 ** TASK Добавить в configure настройку директории установки
    :PROPERTIES:
    :issue_id: 26

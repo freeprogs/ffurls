@@ -334,3 +334,15 @@
 
    - Скрипты ставятся в /usr/bin
    - Конфиг-файла ставится в /etc
+
+** DONE Сделать man страницу
+   CLOSED: [2018-10-30 Вт 11:21]
+   :PROPERTIES:
+   :issue_id: 21
+   :issue_type: task
+   :ARCHIVE_TIME: 2018-10-30 Вт 11:22
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
