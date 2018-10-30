@@ -59,7 +59,7 @@ $ vi ~/.ffurls.conf
 ### Run
 
 ```sh
-$ ffurls.sh
+$ ffurls
 ```
 
 ---
