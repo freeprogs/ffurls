@@ -319,3 +319,18 @@
    :END:
    [2018-09-19 Ср]
 
+** DONE Перенести установку из local в usr
+   CLOSED: [2018-10-30 Вт 11:20]
+   :PROPERTIES:
+   :issue_id: 27
+   :issue_type: task
+   :ARCHIVE_TIME: 2018-10-30 Вт 11:21
+   :ARCHIVE_FILE: ~/prog/projects/python/ffurls/tasks/tasks.org
+   :ARCHIVE_OLPATH: Окружение проекта
+   :ARCHIVE_CATEGORY: tasks
+   :ARCHIVE_TODO: DONE
+   :END:
+   [2018-09-19 Ср]
+
+   - Скрипты ставятся в /usr/bin
+   - Конфиг-файла ставится в /etc
