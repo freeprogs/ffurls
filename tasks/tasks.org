@@ -3,7 +3,7 @@
 #+TODO: BUG(b!) | FIXED(f) REJECT(r)
 #+PRIORITIES: A F C
 #+TAGS: current(c) testing(t)
-#+CONSTANTS: last_issue_id=27
+#+CONSTANTS: last_issue_id=28
 
 * Задачи
   :PROPERTIES:
@@ -59,6 +59,17 @@
   :ARCHIVE:  tasks_archive.org::* Архив багов
   :END:
 
+** BUG Квадратные скобки в title повреждают org-формат
+   :PROPERTIES:
+   :issue_id: 28
+   :issue_type: bug
+   :END:
+
+   [2019-07-18 Чт]
+
+   Когда в названии вкладки квадратные скобки, org-формат не может
+   укоротить ссылку.
+
 
 * Окружение проекта
   :PROPERTIES:
@@ -79,4 +90,3 @@
    хранится в неизменном месте.
    Рассмотреть возможность удаления программы с учётом нового пути
    установки программы.
-
